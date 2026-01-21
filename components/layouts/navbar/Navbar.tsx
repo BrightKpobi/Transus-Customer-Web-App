@@ -11,7 +11,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const onScroll = () => {
-            setShowSearch(window.scrollY > 80)
+            setShowSearch(window.scrollY > 20) // Trigger earlier for better feel
         }
 
         window.addEventListener('scroll', onScroll)
@@ -20,7 +20,9 @@ export default function Navbar() {
 
     return (
         <header
-            className={`sticky top-0 z-50 bg-white transition-all duration-300 ${showSearch ? 'border-b shadow-sm' : ''
+            className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b ${showSearch
+                    ? 'border-gray-200' // This is a visible light gray, but not black
+                    : 'border-transparent'
                 }`}
         >
             <div className="mx-auto max-w-7xl px-4">

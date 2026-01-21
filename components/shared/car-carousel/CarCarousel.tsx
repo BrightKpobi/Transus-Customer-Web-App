@@ -1,6 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link"; // Import Link
+import Link from "next/link";
 import { ChevronRight, Star } from "lucide-react";
 import { Car } from "@/data/CarsData";
 import {
@@ -14,7 +14,7 @@ import {
 interface CarCarouselProps {
     title: string;
     data: Car[];
-    slug: string; // Add slug prop (e.g., "accra" or "legon")
+    slug: string;
 }
 
 export function CarCarousel({ title, data, slug }: CarCarouselProps) {
@@ -22,7 +22,6 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
         <div className="w-full max-w-7xl mx-auto px-4 py-8">
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
                 <div className="flex items-center justify-between mb-6">
-                    {/* Wrap title in Link */}
                     <Link
                         href={`/cars/${slug}`}
                         className="group flex items-center gap-1 hover:opacity-70 transition"
@@ -31,16 +30,29 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                         <ChevronRight className="h-6 w-6 mt-1 transition-transform group-hover:translate-x-1" />
                     </Link>
 
+                    {/* Navigation Buttons: 
+                        - hidden on mobile (hidden md:flex)
+                        - no border (border-none)
+                        - dark on hover (hover:bg-black hover:text-white)
+                        - dark when clicked (active:bg-black)
+                    */}
                     <div className="relative flex gap-2 mr-12">
-                        <CarouselPrevious className="static translate-y-0" />
-                        <CarouselNext className="static translate-y-0" />
+                        <CarouselPrevious
+                            className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex"
+                        />
+                        <CarouselNext
+                            className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex"
+                        />
                     </div>
                 </div>
 
-                <CarouselContent className="-ml-4">
+                <CarouselContent className="-ml-2 md:-ml-4">
                     {data.map((car) => (
-                        <CarouselItem key={car.id} className="pl-4 md:basis-1/2 lg:basis-1/4">
-                            {/* Wrap individual cars in Link for checkout/details */}
+                        <CarouselItem
+                            key={car.id}
+                            // basis-1/2 ensures 2 cars show on mobile
+                            className="pl-2 md:pl-4 basis-1/2 md:basis-1/2 lg:basis-1/4"
+                        >
                             <Link href={`/checkout/${car.id}`} className="block space-y-3 group cursor-pointer">
                                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-gray-100">
                                     <Image
@@ -52,13 +64,13 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                 </div>
 
                                 <div className="space-y-1">
-                                    <h3 className="font-bold text-lg leading-tight">
+                                    <h3 className="font-bold text-sm md:text-lg leading-tight truncate">
                                         {car.name} {car.year}
                                     </h3>
-                                    <div className="flex items-center gap-1 text-sm text-muted-foreground">
+                                    <div className="flex items-center gap-1 text-xs md:text-sm text-muted-foreground">
                                         <span className="font-bold text-foreground">{car.rating.toFixed(1)}</span>
                                         <Star className="h-3 w-3 fill-primary text-primary" />
-                                        <span>({car.trips} trips)</span>
+                                        <span className="hidden xs:inline">({car.trips} trips)</span>
                                     </div>
                                 </div>
                             </Link>

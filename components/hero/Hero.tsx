@@ -16,10 +16,10 @@ export default function Hero() {
 
                 <div className="absolute inset-0 bg-black/35" />
 
-                {/* Added z-30 here to help the child modal layer correctly */}
-                <div className="relative z-30 flex min-h-[420px] flex-col items-center justify-center px-6 text-center text-white md:min-h-[480px]">
+                {/* Reduced min-h from 420px/480px to 320px/380px for a shorter banner */}
+                <div className="relative z-30 flex min-h-[320px] flex-col items-center justify-center px-6 py-12 text-center text-white md:min-h-[380px]">
                     <h1 className="max-w-3xl text-3xl font-bold leading-tight md:text-5xl">
-                        Find the perfect car for your next trip
+                        Rent the perfect car
                     </h1>
 
                     <p className="mt-3 max-w-lg text-base text-white/90 md:text-lg">

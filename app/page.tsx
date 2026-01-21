@@ -48,6 +48,11 @@ export default function Home() {
           data={LegonCars}
           slug="east-legon"
         />
+        <CarCarousel
+          title="Hosted Cars Available"
+          data={LegonCars}
+          slug="east-legon"
+        />
 
       </div>
 

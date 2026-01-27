@@ -10,6 +10,8 @@ interface AccountItemProps {
     subtitle?: string
     onClick?: () => void
     href?: string
+    variant?: 'list' | 'grid'
+    isSelected?: boolean
 }
 
 export function AccountItem({
@@ -18,36 +20,57 @@ export function AccountItem({
     subtitle,
     onClick,
     href,
+    variant = 'list',
+    isSelected = false,
 }: AccountItemProps) {
-    // The shared inner UI
+    const isGrid = variant === 'grid'
+
     const content = (
-        <div className="w-full flex items-center justify-between p-5">
-            <div className="flex items-center gap-4">
-                {/* Icon container with a subtle scale effect on hover */}
-                <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-blue-50 text-blue-600 group-hover:scale-110 transition-transform duration-200">
+        <div className={cn(
+            "w-full flex transition-all duration-300 ease-out",
+            isGrid ? "flex-col items-center justify-center text-center p-10 gap-4" : "flex-row items-center justify-between p-6"
+        )}>
+            <div className={cn("flex items-center", isGrid ? "flex-col gap-4" : "gap-6")}>
+                {/* Icon: Scales and changes to Yellow-600 on hover */}
+                <div className={cn(
+                    "transition-all duration-300 ease-out",
+                    isSelected ? "text-yellow-600" : "text-gray-400 group-hover:text-yellow-600 group-hover:scale-110"
+                )}>
                     {icon}
                 </div>
 
-                <div className="text-left">
-                    <p className="text-[15px] font-bold text-gray-800 leading-tight">
+                <div className={cn("text-left transition-transform duration-300 ease-out", !isGrid && "group-hover:translate-x-2")}>
+                    <p className={cn(
+                        "text-[17px] font-bold leading-tight transition-colors duration-300",
+                        isSelected ? "text-yellow-600" : "text-gray-900"
+                    )}>
                         {title}
                     </p>
                     {subtitle && (
-                        <p className="text-xs text-gray-500 mt-1 font-medium">{subtitle}</p>
+                        <p className="text-[14px] text-gray-400 mt-1 font-medium transition-colors group-hover:text-gray-600">
+                            {subtitle}
+                        </p>
                     )}
                 </div>
             </div>
 
-            <ChevronRight
-                size={20}
-                className="text-gray-300 group-hover:text-gray-600 group-hover:translate-x-1 transition-all duration-200"
-            />
+            {!isGrid && (
+                <ChevronRight
+                    size={20}
+                    className={cn(
+                        "transition-all duration-300",
+                        isSelected ? "text-yellow-600" : "text-gray-200 group-hover:text-yellow-600 group-hover:translate-x-2"
+                    )}
+                />
+            )}
         </div>
     )
-    // Base styles for the container
+
     const baseClassName = cn(
-        "group block w-full border-b border-gray-50 last:border-0",
-        "bg-white hover:bg-gray-50 transition-colors duration-200"
+        'group block w-full outline-none relative transition-all duration-300',
+        'rounded-none bg-white', // Strictly no rounding
+        isSelected ? 'bg-gray-50' : 'bg-white',
+        'active:opacity-70' // Simple feedback for click
     )
 
     if (href) {
@@ -62,5 +85,33 @@ export function AccountItem({
         <button onClick={onClick} className={baseClassName}>
             {content}
         </button>
+    )
+}
+
+export function AccountSection({
+    title,
+    children,
+    variant = 'list',
+}: {
+    title: string
+    children: React.ReactNode
+    variant?: 'list' | 'grid'
+}) {
+    return (
+        <section className="py-4">
+            <h2 className="text-[12px] font-black text-gray-400 uppercase tracking-[0.3em] px-6 mb-2">
+                {title}
+            </h2>
+
+            <div
+                className={cn(
+                    variant === 'list'
+                        ? 'flex flex-col'
+                        : 'grid grid-cols-2 md:grid-cols-3'
+                )}
+            >
+                {children}
+            </div>
+        </section>
     )
 }

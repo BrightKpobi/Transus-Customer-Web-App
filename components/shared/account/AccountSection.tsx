@@ -1,16 +1,27 @@
 interface AccountSectionProps {
     title: string
     children: React.ReactNode
+    variant?: 'list' | 'grid'
 }
 
-export function AccountSection({ title, children }: AccountSectionProps) {
+export function AccountSection({
+    title,
+    children,
+    variant = 'list',
+}: AccountSectionProps) {
     return (
-        <section>
-            <h2 className="text-sm font-bold text-gray-400 mb-3 px-1 uppercase tracking-wider">
+        <section className="space-y-3">
+            <h2 className="text-xs font-bold text-gray-400 uppercase tracking-wider px-1">
                 {title}
             </h2>
 
-            <div className="bg-white rounded-xl border border-gray-200 overflow-hidden">
+            <div
+                className={
+                    variant === 'list'
+                        ? 'bg-white rounded-2xl overflow-hidden'
+                        : 'grid grid-cols-3 gap-3'
+                }
+            >
                 {children}
             </div>
         </section>

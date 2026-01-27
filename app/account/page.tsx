@@ -1,13 +1,7 @@
 'use client'
 
-import {
-    User,
-    ShieldCheck,
-    CreditCard,
-    Car,
-    Wallet,
-    Info,
-} from 'lucide-react'
+import { useTheme } from 'next-themes' // 🔑 import this
+import { User, ShieldCheck, CreditCard, Car, Wallet, Info, Sun, Moon, Monitor, } from 'lucide-react'
 
 import { AccountHeader } from '@/components/shared/account/AccountHeader'
 import { AccountSection } from '@/components/shared/account/AccountSection'
@@ -15,8 +9,10 @@ import { AccountItem } from '@/components/shared/account/AccountItem'
 import { PageNavbar } from '@/components/layouts/page-navbar/PageNavbar'
 
 export default function AccountPage() {
+    const { theme, setTheme } = useTheme()
+
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-gray-50 ">
             <PageNavbar />
             <div className="mx-auto max-w-7xl px-4 py-6 space-y-8">
 
@@ -54,7 +50,7 @@ export default function AccountPage() {
                         icon={<Wallet size={22} />}
                         title="My Balance"
                         subtitle="Manage payments & withdrawals"
-                        href="/account/wallet"
+                        href="/account/balance"
                     />
                 </AccountSection>
 
@@ -63,6 +59,32 @@ export default function AccountPage() {
                         icon={<Info size={22} />}
                         title="About"
                         href="/account/about"
+                    />
+                </AccountSection>
+
+                <AccountSection title="Appearance" variant="grid">
+                    <AccountItem
+                        icon={<Sun size={20} />}
+                        title="Light"
+                        variant="grid"
+                        isSelected={theme === 'light'}
+                        onClick={() => setTheme('light')}
+                    />
+
+                    <AccountItem
+                        icon={<Moon size={20} />}
+                        title="Dark"
+                        variant="grid"
+                        isSelected={theme === 'dark'}
+                        onClick={() => setTheme('dark')}
+                    />
+
+                    <AccountItem
+                        icon={<Monitor size={20} />}
+                        title="System"
+                        variant="grid"
+                        isSelected={theme === 'system'}
+                        onClick={() => setTheme('system')}
                     />
                 </AccountSection>
 

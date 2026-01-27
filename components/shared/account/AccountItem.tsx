@@ -44,7 +44,6 @@ export function AccountItem({
             />
         </div>
     )
-
     // Base styles for the container
     const baseClassName = cn(
         "group block w-full border-b border-gray-50 last:border-0",

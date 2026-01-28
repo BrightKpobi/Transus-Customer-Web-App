@@ -41,7 +41,7 @@ export default function AccountPage() {
                         icon={<Car size={22} />}
                         title="List Your Car"
                         subtitle="Earn money by sharing your car"
-                        href="/account/list-car"
+                        href="/account/car-list"
                     />
                 </AccountSection>
 

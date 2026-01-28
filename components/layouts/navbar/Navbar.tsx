@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import Logo from "@/components/layouts/navbar/Logo"
 import SearchBar from "@/components/layouts/navbar/SearchBar"
-import NavLinks from "@/components/layouts/navbar/NavLinks"
+// import NavLinks from "@/components/layouts/navbar/NavLinks" 
 import UserMenu from "@/components/layouts/navbar/UserMenu"
 
 export default function Navbar() {
@@ -21,8 +21,8 @@ export default function Navbar() {
     return (
         <header
             className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b ${showSearch
-                    ? 'border-gray-200' // This is a visible light gray, but not black
-                    : 'border-transparent'
+                ? 'border-gray-200' // This is a visible light gray, but not black
+                : 'border-transparent'
                 }`}
         >
             <div className="mx-auto max-w-7xl px-4">
@@ -37,7 +37,7 @@ export default function Navbar() {
 
                     {/* Right */}
                     <div className="flex items-center gap-4">
-                        <NavLinks />
+                        {/* <NavLinks />  */}
                         <UserMenu />
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import {
     Menu,
     UserCircle,
@@ -61,7 +62,10 @@ export default function ProfileDropdown() {
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Navigation className="mr-2 h-4 w-4 text-gray-500" />
-                        <span className="font-medium text-sm">Trips</span>
+                        <Link href={"/trip"}>
+                            <p className="font-medium text-sm">Trip</p>
+                        </Link>
+
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
@@ -74,11 +78,17 @@ export default function ProfileDropdown() {
                 <DropdownMenuGroup className="py-1">
                     <DropdownMenuItem className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <User className="mr-2 h-4 w-4 text-gray-500" />
-                        <span className="font-medium text-sm">Profile</span>
+                        <Link href={"/account"}>
+                            <p className="font-medium text-sm">Account</p>
+                        </Link>
+
                     </DropdownMenuItem>
                     <DropdownMenuItem className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Car className="mr-2 h-4 w-4 text-gray-500" />
-                        <span className="font-medium text-sm">Become a host</span>
+                        <Link href={"/host"}>
+                            <p className="font-medium text-sm">Become a host</p>
+                        </Link>
+
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
 

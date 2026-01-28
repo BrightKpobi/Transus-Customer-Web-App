@@ -7,9 +7,9 @@ export default function NavLinks() {
                 Become a host
             </Link>
 
-            <Link href="/trips" className="text-sm font-medium hover:underline">
-                Trips
-            </Link>
+            {/* <Link href="/trip" className="text-sm font-medium hover:underline">
+                Trip
+            </Link> */}
         </nav>
     )
 }

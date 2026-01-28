@@ -1,7 +1,11 @@
 import React from 'react'
+import Navbar from '@/components/layouts/navbar/Navbar'
 
 export default function LicenseVerification() {
     return (
-        <div>LicenseVerification</div>
+        <>
+            <Navbar />
+            <div>LicenseVerification</div>
+        </>
     )
 }

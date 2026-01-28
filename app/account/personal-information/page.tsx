@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import { User, Calendar, Camera, CheckCircle2 } from 'lucide-react'
 
 // Shadcn UI Components
-import { PageNavbar } from '@/components/layouts/page-navbar/PageNavbar'
+import Navbar from '@/components/layouts/navbar/Navbar'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
@@ -36,7 +36,7 @@ export default function PersonalInfoPage() {
     return (
         <div className="min-h-screen bg-gray-50/50">
             <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-                <PageNavbar title="Personal Information" titlePosition="center" />
+                <Navbar />
             </div>
 
             <main className="mx-auto max-w-7xl px-4 py-12">

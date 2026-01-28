@@ -1,5 +1,6 @@
 'use client'
 
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import {
     CheckCircle2,
@@ -9,16 +10,18 @@ import {
     Calendar,
 } from 'lucide-react'
 
-import { PageNavbar } from '@/components/layouts/page-navbar/PageNavbar'
+import Navbar from '@/components/layouts/navbar/Navbar'
 import { HostHeroCard } from '@/components/shared/host/HostHeroCard'
 import { StatCard } from '@/components/shared/host/StatCard'
 import { ActionCard } from '@/components/shared/host/ActionCard'
 
 export default function BecomeAHostPage() {
+    const router = useRouter()
+
     return (
         <div className="min-h-screen bg-white">
 
-            <PageNavbar title="Host Dashboard" titlePosition="center" />
+            <Navbar />
 
 
             <div className="mx-auto max-w-7xl px-4 space-y-10 mt-3">
@@ -32,7 +35,7 @@ export default function BecomeAHostPage() {
                     </h3>
 
                     <div className="grid grid-cols-2 gap-4">
-                        <StatCard icon={<CheckCircle2 className="text-blue-500" />} label="Confirmed" value="0" />
+                        <StatCard icon={<CheckCircle2 className="text-amber-500" />} label="Confirmed" value="0" />
                         <StatCard icon={<PlayCircle className="text-orange-400" />} label="In Progress" value="0" />
                         <StatCard icon={<CheckCircle2 className="text-green-500" />} label="Completed" value="0" />
                         <StatCard icon={<XCircle className="text-red-500" />} label="Cancelled" value="0" />
@@ -47,14 +50,16 @@ export default function BecomeAHostPage() {
 
                     <div className="grid grid-cols-2 gap-4">
                         <ActionCard
-                            icon={<Plus className="text-blue-600" />}
+                            icon={<Plus className="text-amber-600" />}
                             title="Add Vehicle"
                             subtitle="List a new car"
+                            onClick={() => router.push('/host/add-vehicle')}
                         />
                         <ActionCard
-                            icon={<Calendar className="text-blue-600" />}
+                            icon={<Calendar className="text-amber-600" />}
                             title="Bookings"
                             subtitle="View all requests"
+                            onClick={() => router.push('/host/bookings')}
                         />
                     </div>
                 </section>
@@ -65,16 +70,19 @@ export default function BecomeAHostPage() {
                         <h3 className="text-lg font-bold text-gray-900">
                             My Vehicles
                         </h3>
-                        <button className="text-blue-600 font-bold text-sm hover:underline">
+                        <button className="text-amber-600 font-bold text-sm hover:underline">
                             See All
                         </button>
                     </div>
 
                     <div className="relative group">
-                        <div className="flex gap-4 p-3 bg-white border border-gray-100 rounded-2xl">
+                        <div 
+                            onClick={() => router.push('/host/vehicles/1')}
+                            className="flex gap-4 p-3 bg-white border border-gray-100 rounded-2xl cursor-pointer hover:shadow-md transition"
+                        >
                             <div className="relative h-20 w-32 flex-shrink-0 overflow-hidden rounded-xl">
                                 <Image
-                                    src="/cars/toyota-corolla.jpg"
+                                    src="/img/cars/toyota-corolla.jpg"
                                     alt="Toyota Corolla"
                                     fill
                                     className="object-cover"
@@ -89,14 +97,20 @@ export default function BecomeAHostPage() {
                                     <span className="px-2 py-0.5 bg-green-50 text-green-600 text-[10px] font-bold rounded-md">
                                         Available
                                     </span>
-                                    <span className="text-sm font-bold text-blue-600">
+                                    <span className="text-sm font-bold text-amber-600">
                                         GHS 255.00/day
                                     </span>
                                 </div>
                             </div>
                         </div>
 
-                        <button className="absolute -right-2 -bottom-2 p-3 bg-blue-500 text-white rounded-2xl shadow-lg shadow-blue-200 hover:bg-blue-600 transition-colors">
+                        <button 
+                            onClick={(e) => {
+                                e.stopPropagation()
+                                router.push('/host/add-vehicle')
+                            }}
+                            className="absolute -right-2 -bottom-2 p-3 bg-amber-500 text-white rounded-2xl shadow-lg shadow-amber-200 hover:bg-amber-600 transition-colors"
+                        >
                             <Plus size={24} />
                         </button>
                     </div>

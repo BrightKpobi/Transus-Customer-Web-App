@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import { CreditCard, Upload, X, CheckCircle2, FileText, Image as ImageIcon } from 'lucide-react'
 
 // Shadcn UI Components
-import { PageNavbar } from '@/components/layouts/page-navbar/PageNavbar'
+import Navbar from '@/components/layouts/navbar/Navbar'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -32,7 +32,7 @@ export default function KYCPage() {
         <div className="min-h-screen bg-gray-50/50 pb-20">
             {/* Sticky Navbar */}
             <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-                <PageNavbar title="KYC Verification" titlePosition="center" />
+                <Navbar />
             </div>
 
             <main className="mx-auto max-w-7xl px-4 py-12">

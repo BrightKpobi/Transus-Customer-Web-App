@@ -1,9 +1,9 @@
-import { PageNavbar } from "@/components/layouts/page-navbar/PageNavbar"
+import Navbar from "@/components/layouts/navbar/Navbar"
 
 export default function BalancePage() {
     return (
         <main>
-            <PageNavbar />
+            <Navbar />
         </main>
     )
 }

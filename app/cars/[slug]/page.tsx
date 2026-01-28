@@ -2,6 +2,7 @@ import { AccraCars, LegonCars, Car } from "@/data/CarsData";
 import Image from "next/image";
 import Link from "next/link";
 import { Star, ChevronLeft } from "lucide-react";
+import Navbar from "@/components/layouts/navbar/Navbar";
 
 export default async function LocationPage({
     params
@@ -35,8 +36,10 @@ export default async function LocationPage({
     }
 
     return (
-        <main className="max-w-7xl mx-auto px-4 py-12">
-            <header className="mb-10 space-y-4">
+        <>
+            <Navbar />
+            <main className="max-w-7xl mx-auto px-4 py-12">
+                <header className="mb-10 space-y-4">
                 <Link href="/" className="flex items-center text-sm text-muted-foreground hover:text-foreground transition">
                     <ChevronLeft size={16} />
                     Back to home
@@ -78,5 +81,6 @@ export default async function LocationPage({
                 ))}
             </div>
         </main>
+        </>
     );
 }

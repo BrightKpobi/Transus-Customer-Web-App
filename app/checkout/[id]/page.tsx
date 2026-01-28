@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import Navbar from "@/components/layouts/navbar/Navbar";
 
 export default async function CheckoutPage({
     params
@@ -41,9 +42,11 @@ export default async function CheckoutPage({
     }
 
     return (
-        <main className="max-w-6xl mx-auto px-4 py-8 md:py-12">
-            {/* Navigation Breadcrumb */}
-            <div className="mb-8">
+        <>
+            <Navbar />
+            <main className="max-w-6xl mx-auto px-4 py-8 md:py-12">
+                {/* Navigation Breadcrumb */}
+                <div className="mb-8">
                 <Link href="/" className="flex items-center text-sm font-medium text-gray-500 hover:text-black transition">
                     <ChevronLeft size={16} className="mr-1" />
                     Back to search
@@ -186,5 +189,6 @@ export default async function CheckoutPage({
                 </div>
             </div>
         </main>
+        </>
     );
 }

@@ -3,7 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { MoreVertical, Calendar, ChevronLeft } from 'lucide-react'
-import { PageNavbar } from '@/components/layouts/page-navbar/PageNavbar'
+import Navbar from '@/components/layouts/navbar/Navbar'
 import { useRouter } from 'next/navigation'
 
 // Mock Data from your screenshot
@@ -46,7 +46,7 @@ export default function TripPage() {
     return (
         <div className="min-h-screen bg-white">
             {/* Outer wrapper for Navbar alignment (max-w-7xl) */}
-            <PageNavbar title="My Trips" titlePosition="center" />
+            <Navbar />
             <div className="mx-auto max-w-7xl px-4 py-6">
 
                 {/* Inner wrapper to prevent the list from being too wide (max-w-xl) */}

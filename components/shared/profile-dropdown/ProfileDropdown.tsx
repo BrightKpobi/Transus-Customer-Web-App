@@ -25,6 +25,10 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export default function ProfileDropdown() {
+    const handleLogout = () => {
+        // Add your logout logic here
+        console.log("Logging out...");
+    };
 
     return (
         <DropdownMenu>
@@ -41,10 +45,10 @@ export default function ProfileDropdown() {
             >
                 <DropdownMenuGroup className="py-1">
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center">
+                        <Link href="/favorites" className="flex items-center">
                             <Heart className="mr-2 h-4 w-4 text-gray-500" />
                             <span className="font-medium text-sm">Favorites</span>
-                        </div>
+                        </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Link href="/trip" className="flex items-center">
@@ -53,10 +57,10 @@ export default function ProfileDropdown() {
                         </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center">
+                        <Link href="/inbox" className="flex items-center">
                             <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
                             <span className="font-medium text-sm">Inbox</span>
-                        </div>
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
 
@@ -81,23 +85,23 @@ export default function ProfileDropdown() {
 
                 <DropdownMenuGroup className="py-1">
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center">
+                        <Link href="/gift-cards" className="flex items-center">
                             <Gift className="mr-2 h-4 w-4 text-gray-500" />
                             <span className="font-medium text-sm text-gray-600">Gift cards</span>
-                        </div>
+                        </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center">
+                        <Link href="/help" className="flex items-center">
                             <Headset className="mr-2 h-4 w-4 text-gray-500" />
                             <span className="font-medium text-sm text-gray-600">Get help</span>
-                        </div>
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
 
                 <DropdownMenuSeparator className="bg-gray-100" />
 
-                <DropdownMenuItem asChild className="cursor-pointer py-2 text-red-600 focus:text-red-600 focus:bg-red-50">
-                    <button className="flex items-center w-full">
+                <DropdownMenuItem className="cursor-pointer py-2 text-red-600 focus:text-red-600 focus:bg-red-50">
+                    <button onClick={handleLogout} className="flex items-center w-full">
                         <LogOut className="mr-2 h-4 w-4" />
                         <span className="font-bold text-sm">Log out</span>
                     </button>

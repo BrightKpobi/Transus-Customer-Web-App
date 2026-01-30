@@ -43,17 +43,21 @@ const trips = [
 export default function TripPage() {
     const router = useRouter();
 
+    const BackButton = () => (
+        <button
+            onClick={() => router.back()}
+            className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition mb-4"
+            aria-label="Back"
+        >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+    );
     return (
         <div className="min-h-screen bg-white">
-            {/* Outer wrapper for Navbar alignment (max-w-7xl) */}
             <Navbar />
             <div className="mx-auto max-w-7xl px-4 py-6">
-
-                {/* Inner wrapper to prevent the list from being too wide (max-w-xl) */}
+                <BackButton />
                 <div className="max-w-7xl mx-auto">
-
-
-                    {/* Trip List */}
                     <div className="space-y-10">
                         {trips.map((trip) => (
                             <TripCard key={trip.id} trip={trip} />

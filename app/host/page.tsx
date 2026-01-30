@@ -20,10 +20,17 @@ export default function BecomeAHostPage() {
 
     return (
         <div className="min-h-screen bg-white">
-
             <Navbar />
-
-
+            <div className="p-4">
+                <button
+                    onClick={() => router.push('/')}
+                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition"
+                    aria-label="Back to Home"
+                    type="button"
+                >
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+            </div>
             <div className="mx-auto max-w-7xl px-4 space-y-10 mt-3">
 
                 <HostHeroCard />

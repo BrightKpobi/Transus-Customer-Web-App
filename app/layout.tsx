@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { FavoritesProvider } from "@/components/shared/car-carousel/FavoritesContext";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -22,8 +23,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} antialiased`}>
-        {children}
-        <Toaster />
+        <FavoritesProvider>
+          {children}
+        </FavoritesProvider>
+        <Toaster position="top-center" />
       </body>
     </html>
   );

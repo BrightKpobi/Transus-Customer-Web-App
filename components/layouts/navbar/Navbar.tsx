@@ -1,6 +1,9 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Link from 'next/link'
+import { Bell } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 import Logo from "@/components/layouts/navbar/Logo"
 import SearchBar from "@/components/layouts/navbar/SearchBar"
 // import NavLinks from "@/components/layouts/navbar/NavLinks" 
@@ -8,6 +11,7 @@ import UserMenu from "@/components/layouts/navbar/UserMenu"
 
 export default function Navbar() {
     const [showSearch, setShowSearch] = useState(false)
+    const router = useRouter()
 
     useEffect(() => {
         const onScroll = () => {
@@ -38,6 +42,9 @@ export default function Navbar() {
                     {/* Right */}
                     <div className="flex items-center gap-4">
                         {/* <NavLinks />  */}
+                        <button onClick={() => router.push('/notifications')} className="p-2 rounded-full hover:bg-gray-100">
+                            <Bell size={18} className="text-gray-700" />
+                        </button>
                         <UserMenu />
                     </div>
                 </div>

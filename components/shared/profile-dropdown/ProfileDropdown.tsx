@@ -29,7 +29,7 @@ export default function ProfileDropdown() {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <button className="flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1.5 hover:shadow-md transition bg-white outline-none">
+                <button suppressHydrationWarning className="flex items-center gap-2 rounded-full border border-gray-200 px-3 py-1.5 hover:shadow-md transition bg-white outline-none">
                     <Menu size={18} />
                     <UserCircle size={22} className="text-gray-500" />
                 </button>
@@ -41,10 +41,10 @@ export default function ProfileDropdown() {
             >
                 <DropdownMenuGroup className="py-1">
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center">
+                        <Link href="/favourites" className="flex items-center">
                             <Heart className="mr-2 h-4 w-4 text-gray-500" />
                             <span className="font-medium text-sm">Favorites</span>
-                        </div>
+                        </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Link href="/trip" className="flex items-center">
@@ -53,10 +53,10 @@ export default function ProfileDropdown() {
                         </Link>
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <div className="flex items-center">
+                        <Link href="/notifications" className="flex items-center">
                             <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
-                            <span className="font-medium text-sm">Inbox</span>
-                        </div>
+                            <span className="font-medium text-sm">Notifications</span>
+                        </Link>
                     </DropdownMenuItem>
                 </DropdownMenuGroup>
 

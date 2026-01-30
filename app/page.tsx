@@ -17,8 +17,8 @@
 import Navbar from "@/components/layouts/navbar/Navbar";
 import Footer from "@/components/layouts/footer/Footer";
 import Hero from "@/components/hero/Hero";
-
 import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
+
 import { AccraCars, LegonCars } from "@/data/CarsData";
 
 export default function Home() {
@@ -26,10 +26,8 @@ export default function Home() {
     <main className="min-h-screen ">
       {/* Top Navigation */}
       <Navbar />
-
       {/* Hero Banner */}
       <Hero />
-
       {/* @Kevin listed cars here  */}
       <div>
         <CarCarousel
@@ -37,7 +35,6 @@ export default function Home() {
           data={AccraCars}
           slug="accra"
         />
-
         <CarCarousel
           title="Newer cars in East Legon"
           data={LegonCars}
@@ -53,9 +50,7 @@ export default function Home() {
           data={LegonCars}
           slug="east-legon"
         />
-
       </div>
-
       <Footer />
     </main>
   );

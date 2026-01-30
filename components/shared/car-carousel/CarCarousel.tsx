@@ -1,6 +1,7 @@
 'use client'
 
 import * as React from "react"
+import { useFavorites } from "./FavoritesContext"
 import Image from "next/image"
 import Link from "next/link"
 import { ChevronRight, Star, Heart } from "lucide-react"
@@ -21,15 +22,7 @@ interface CarCarouselProps {
 }
 
 export function CarCarousel({ title, data, slug }: CarCarouselProps) {
-    const [favorites, setFavorites] = React.useState<Record<string, boolean>>({})
-
-    const toggleFavorite = (id: string) => {
-        setFavorites((prev) => ({
-            ...prev,
-            [id]: !prev[id],
-        }))
-    }
-
+    const { favorites, toggleFavorite } = useFavorites();
     return (
         <div className="w-full max-w-7xl mx-auto px-4 py-8">
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
@@ -50,8 +43,7 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
 
                 <CarouselContent className="-ml-2 md:-ml-4">
                     {data.map((car) => {
-                        const isFavorite = favorites[car.id]
-
+                        const isFavorite = favorites[car.id];
                         return (
                             <CarouselItem
                                 key={car.id}
@@ -68,13 +60,12 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                             fill
                                             className="object-cover transition duration-300 group-hover:scale-105"
                                         />
-
                                         {/* FAVORITE TOGGLE */}
                                         <button
                                             onClick={(e) => {
-                                                e.preventDefault()
-                                                e.stopPropagation()
-                                                toggleFavorite(car.id)
+                                                e.preventDefault();
+                                                e.stopPropagation();
+                                                toggleFavorite(String(car.id));
                                             }}
                                             className="absolute top-2 left-2 h-8 w-8 rounded-full bg-white/90 flex items-center justify-center"
                                         >
@@ -88,12 +79,10 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                             />
                                         </button>
                                     </div>
-
                                     <div className="space-y-1">
                                         <h3 className="font-bold text-sm md:text-lg leading-tight truncate">
                                             {car.name} {car.year}
                                         </h3>
-
                                         <div className="flex items-center gap-1 text-xs md:text-sm text-muted-foreground">
                                             <span className="font-bold text-foreground">
                                                 {car.rating.toFixed(1)}
@@ -103,11 +92,9 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                                 ({car.trips} trips)
                                             </span>
                                         </div>
-
                                         <p className="text-xs text-gray-500">
                                             Hosted by {car.host}
                                         </p>
-
                                         <div className="flex flex-wrap gap-1">
                                             <span className="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full">
                                                 {car.seats}
@@ -119,13 +106,11 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                                 {car.transmission}
                                             </span>
                                         </div>
-
                                         <div className="flex items-center justify-between">
                                             <p className="text-sm font-bold text-blue-600">
                                                 GHS {car.pricePerDay.toFixed(2)}
                                                 <span className="text-gray-400 font-medium"> / day</span>
                                             </p>
-
                                             {car.available && (
                                                 <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
                                                     Available
@@ -135,7 +120,7 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                     </div>
                                 </Link>
                             </CarouselItem>
-                        )
+                        );
                     })}
                 </CarouselContent>
             </Carousel>

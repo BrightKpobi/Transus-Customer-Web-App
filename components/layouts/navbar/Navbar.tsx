@@ -8,6 +8,7 @@ import Logo from "@/components/layouts/navbar/Logo"
 import SearchBar from "@/components/layouts/navbar/SearchBar"
 // import NavLinks from "@/components/layouts/navbar/NavLinks" 
 import UserMenu from "@/components/layouts/navbar/UserMenu"
+import { ModeToggle } from "@/components/layouts/navbar/ThemeToggleBtn"
 
 export default function Navbar() {
     const [showSearch, setShowSearch] = useState(false)
@@ -49,6 +50,7 @@ export default function Navbar() {
                             <Bell size={18} className="text-gray-700 dark:text-gray-300" />
                         </button>
                         <UserMenu />
+                        <ModeToggle />
                     </div>
                 </div>
             </div>

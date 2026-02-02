@@ -3,6 +3,7 @@ import { Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { FavoritesProvider } from "@/components/shared/car-carousel/FavoritesContext";
+import { ThemeProvider } from "@/components/theme-provider/ThemeProvider";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -21,11 +22,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={`${outfit.variable} antialiased`}>
-        <FavoritesProvider>
-          {children}
-        </FavoritesProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <FavoritesProvider>
+            {children}
+          </FavoritesProvider>
+        </ThemeProvider>
+
         <Toaster position="top-center" />
       </body>
     </html>

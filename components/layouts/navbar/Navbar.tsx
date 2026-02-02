@@ -25,7 +25,7 @@ export default function Navbar() {
     return (
         <header
             className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b ${showSearch
-                ? 'border-gray-200' // This is a visible light gray, but not black
+                ? 'border-gray-200 ' // Visible border
                 : 'border-transparent'
                 }`}
         >
@@ -42,8 +42,11 @@ export default function Navbar() {
                     {/* Right */}
                     <div className="flex items-center gap-4">
                         {/* <NavLinks />  */}
-                        <button onClick={() => router.push('/notifications')} className="p-2 rounded-full hover:bg-gray-100">
-                            <Bell size={18} className="text-gray-700" />
+                        <button
+                            onClick={() => router.push('/notifications')}
+                            className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"
+                        >
+                            <Bell size={18} className="text-gray-700 dark:text-gray-300" />
                         </button>
                         <UserMenu />
                     </div>

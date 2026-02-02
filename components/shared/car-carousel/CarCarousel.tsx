@@ -43,7 +43,7 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
 
                 <CarouselContent className="-ml-2 md:-ml-4">
                     {data.map((car) => {
-                        const isFavorite = favorites[car.id];
+                        const isFavorite = favorites[String(car.id)];
                         return (
                             <CarouselItem
                                 key={car.id}

@@ -1,17 +1,31 @@
 'use client'
-import { Search } from 'lucide-react'
+
+import { Search, MapPin } from 'lucide-react'
 
 export default function SearchBar({ visible }: { visible: boolean }) {
     return (
-        <div className={`transition-all duration-300 transform ${visible ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
-            }`}>
-            <div className="flex items-center gap-4 rounded-full border border-gray-200 bg-white py-2 pl-6 pr-2 hover:shadow-md transition cursor-pointer">
-                <span className="text-sm font-semibold text-gray-800">Anywhere</span>
-                <div className="h-4 w-px bg-gray-200" />
-                <span className="text-sm font-semibold text-gray-800">Any dates</span>
-                <div className="ml-2 rounded-full bg-[#593CFB] p-2 text-white">
-                    <Search size={16} strokeWidth={3} />
-                </div>
+        <div
+            className={`transition-all duration-300 ease-out transform
+        ${visible
+                    ? 'opacity-100 translate-y-0 scale-100'
+                    : 'opacity-0 -translate-y-2 scale-95 pointer-events-none'
+                }`}
+        >
+            <div className="flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-black/10">
+
+                {/* Icon */}
+                <MapPin size={16} className="text-gray-400" />
+
+                {/* Input */}
+                <input
+                    placeholder="Search location..."
+                    className="w-40 md:w-56 bg-transparent outline-none text-sm font-semibold text-gray-900 placeholder:text-gray-400"
+                />
+
+                {/* Button */}
+                <button className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white hover:bg-gray-900 transition">
+                    <Search size={14} strokeWidth={3} />
+                </button>
             </div>
         </div>
     )

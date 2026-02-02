@@ -12,7 +12,7 @@ export default function NotificationsPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 py-8">
+      <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex items-center mb-6">
           <button
             onClick={() => router.back()}

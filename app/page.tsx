@@ -1,35 +1,22 @@
-
-// import Navbar from "@/components/layouts/navbar/Navbar";
-// import Hero from "@/components/hero/Hero";
-
-// export default function Home() {
-//   return (
-//     <main className="min-h-screen">
-//       <Navbar />
-//       <Hero />
-
-
-//     </main>
-//   );
-// }
-
+"use client"; // ⚠️ Must be first line
 
 import Navbar from "@/components/layouts/navbar/Navbar";
 import Footer from "@/components/layouts/footer/Footer";
 import Hero from "@/components/hero/Hero";
 import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
 
-import { AccraCars, LegonCars } from "@/data/CarsData";
+import { AccraCars, LegonCars, CantonmentsCars } from "@/data/CarsData";
 
 export default function Home() {
+
   return (
-    <main className="min-h-screen ">
+    <main className="min-h-screen bg-white ">
       {/* Top Navigation */}
       <Navbar />
-      {/* Hero Banner */}
+
       <Hero />
-      {/* @Kevin listed cars here  */}
-      <div>
+
+      <div className="bg-white ">
         <CarCarousel
           title="Monthly car rentals in Accra"
           data={AccraCars}
@@ -42,8 +29,8 @@ export default function Home() {
         />
         <CarCarousel
           title="Check our latest SUVs"
-          data={LegonCars}
-          slug="east-legon"
+          data={CantonmentsCars}
+          slug="contanments"
         />
         <CarCarousel
           title="Hosted Cars Available"
@@ -55,4 +42,3 @@ export default function Home() {
     </main>
   );
 }
-

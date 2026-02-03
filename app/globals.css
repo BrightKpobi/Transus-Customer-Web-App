@@ -1,8 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer base {
+    :root {
+        --background: 0 0% 100%;
 
-/* globals.css */
+        --foreground: 0 0% 3.9%;
+        --border: 0 0% 92%;
+
+    }
+
+    .dark {
+        --background: 0 0% 2%;
+
+        --foreground: 0 0% 98%;
+        --border: 0 0% 14.9%;
+
+    }
+}
 
 /* Apply the font variable */
 :root {
@@ -15,8 +30,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    /* -webkit-font-smoothing: antialiased; */
+    /* -moz-osx-font-smoothing: grayscale;  */
+
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
 }
 
 /* Optional: headings and other elements */

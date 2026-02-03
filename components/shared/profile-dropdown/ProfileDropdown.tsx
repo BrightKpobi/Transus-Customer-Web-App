@@ -45,12 +45,12 @@ export default function ProfileDropdown() {
             >
                 <DropdownMenuGroup className="py-1">
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
-                        <Link href="/favourites" className="flex items-center">
+
                         <Link href="/favorites" className="flex items-center">
                             <Heart className="mr-2 h-4 w-4 text-gray-500" />
                             <span className="font-medium text-sm">Favorites</span>
                         </Link>
-                        </Link>
+
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Link href="/trip" className="flex items-center">
@@ -60,10 +60,10 @@ export default function ProfileDropdown() {
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Link href="/notifications" className="flex items-center">
-                        <Link href="/inbox" className="flex items-center">
-                            <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
-                            <span className="font-medium text-sm">Notifications</span>
-                        </Link>
+                            <Link href="/inbox" className="flex items-center">
+                                <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
+                                <span className="font-medium text-sm">Notifications</span>
+                            </Link>
                             <span className="font-medium text-sm">Inbox</span>
                         </Link>
                     </DropdownMenuItem>

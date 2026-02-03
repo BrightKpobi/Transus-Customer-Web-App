@@ -24,7 +24,7 @@ interface CarCarouselProps {
 export function CarCarousel({ title, data, slug }: CarCarouselProps) {
     const { favorites, toggleFavorite } = useFavorites();
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 py-8">
+        <div className="w-full max-w-7xl mx-auto px-4 py-8 ">
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
                 <div className="flex items-center justify-between mb-6">
                     <Link

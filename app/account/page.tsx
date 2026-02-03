@@ -8,13 +8,16 @@ import { AccountSection } from '@/components/shared/account/AccountSection'
 import { AccountItem } from '@/components/shared/account/AccountItem'
 import Navbar from '@/components/layouts/navbar/Navbar'
 
+
+import { ModeToggle } from '@/components/layouts/navbar/ThemeToggleBtn'
+
 export default function AccountPage() {
     const { theme, setTheme } = useTheme()
 
     return (
-        <div className="min-h-screen bg-gray-50 ">
+        <div className="min-h-screen bg-gray-50   ">
             <Navbar />
-            <div className="mx-auto max-w-7xl px-4 py-6 space-y-8">
+            <div className="mx-auto max-w-7xl px-4 py-6 space-y-8 ">
 
                 <AccountHeader />
 
@@ -62,31 +65,20 @@ export default function AccountPage() {
                     />
                 </AccountSection>
 
-                <AccountSection title="Appearance" variant="grid">
-                    <AccountItem
-                        icon={<Sun size={20} />}
-                        title="Light"
-                        variant="grid"
-                        isSelected={theme === 'light'}
-                        onClick={() => setTheme('light')}
-                    />
+                {/* Theme toggle section  */}
+                <section className="space-y-3">
+                    <h2 className="text-xs font-bold text-gray-400 uppercase tracking-wider px-1">
+                        Appearance
+                    </h2>
 
-                    <AccountItem
-                        icon={<Moon size={20} />}
-                        title="Dark"
-                        variant="grid"
-                        isSelected={theme === 'dark'}
-                        onClick={() => setTheme('dark')}
-                    />
+                    <div className='grid grid-cols-3 gap-3'>
+                        <div>
+                            <ModeToggle />
+                        </div>
+                    </div>
+                </section>
 
-                    <AccountItem
-                        icon={<Monitor size={20} />}
-                        title="System"
-                        variant="grid"
-                        isSelected={theme === 'system'}
-                        onClick={() => setTheme('system')}
-                    />
-                </AccountSection>
+
 
             </div>
         </div>

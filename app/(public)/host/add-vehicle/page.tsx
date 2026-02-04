@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
-import Navbar from '@/components/layouts/navbar/Navbar'
 import { StepIndicator } from '@/components/shared/host/add-vehicle/StepIndicator'
 import { BasicInfoStep } from '@/components/shared/host/add-vehicle/BasicInfoStep'
 import { DetailsStep } from '@/components/shared/host/add-vehicle/DetailsStep'
@@ -112,7 +111,7 @@ export default function AddVehiclePage() {
                     return false
                 }
                 return true
-            
+
             case 2: // Details
                 if (!formData.seats) {
                     toast.error('Please select number of seats')
@@ -139,10 +138,10 @@ export default function AddVehiclePage() {
                     return false
                 }
                 return true
-            
+
             case 3: // Features (optional, no validation needed)
                 return true
-            
+
             case 4: // Media
                 if (formData.photos.length === 0) {
                     toast.error('Please add at least one photo of your vehicle')
@@ -157,14 +156,14 @@ export default function AddVehiclePage() {
                     return false
                 }
                 return true
-            
+
             case 5: // Pricing
                 if (!formData.dailyRate || parseFloat(formData.dailyRate) <= 0) {
                     toast.error('Please enter a valid daily rate')
                     return false
                 }
                 return true
-            
+
             default:
                 return true
         }
@@ -186,7 +185,7 @@ export default function AddVehiclePage() {
         if (!validateCurrentStep()) {
             return
         }
-        
+
         // TODO: Submit form data to API
         console.log('Submitting:', formData)
         router.push('/host')
@@ -211,7 +210,7 @@ export default function AddVehiclePage() {
 
     return (
         <div className="min-h-screen bg-white flex flex-col">
-            <Navbar />
+
             <div className="mx-auto w-full max-w-7xl px-4 flex-1 flex flex-col">
                 {/* Back Button below header */}
                 <div className="pt-4 pb-2">

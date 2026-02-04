@@ -1,7 +1,7 @@
 'use client'
 
 import { MapPin } from 'lucide-react'
-import { VehicleFormData } from '@/app/host/add-vehicle/page'
+import { VehicleFormData } from '@/app/(public)/host/add-vehicle/page'
 import { SelectField } from './SelectField'
 
 interface DetailsStepProps {
@@ -71,7 +71,7 @@ export function DetailsStep({ formData, updateFormData }: DetailsStepProps) {
                     <div className="flex items-center gap-3">
                         <MapPin size={18} className="text-gray-400" />
                         <span className={formData.pickupLocations.length > 0 ? 'text-gray-900' : 'text-gray-400'}>
-                            {formData.pickupLocations.length > 0 
+                            {formData.pickupLocations.length > 0
                                 ? formData.pickupLocations.join(', ')
                                 : 'Select pickup locations'
                             }
@@ -100,8 +100,8 @@ export function DetailsStep({ formData, updateFormData }: DetailsStepProps) {
                                 }}
                                 className={`
                                     px-3 py-2 rounded-full text-sm font-medium border transition
-                                    ${isSelected 
-                                        ? 'bg-amber-400 border-amber-400 text-white' 
+                                    ${isSelected
+                                        ? 'bg-amber-400 border-amber-400 text-white'
                                         : 'bg-white border-gray-200 text-gray-700 hover:border-amber-400'
                                     }
                                 `}

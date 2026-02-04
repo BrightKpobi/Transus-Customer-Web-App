@@ -2,7 +2,7 @@
 
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
-import { VehicleFormData } from '@/app/host/add-vehicle/page'
+import { VehicleFormData } from '@/app/(public)/host/add-vehicle/page'
 
 interface PricingStepProps {
     formData: VehicleFormData

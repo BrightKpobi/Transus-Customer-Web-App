@@ -3,8 +3,8 @@
 import React, { useState, useRef } from 'react'
 import { User, Calendar, Camera, CheckCircle2 } from 'lucide-react'
 
-// Shadcn UI Components
-import Navbar from '@/components/layouts/navbar/Navbar'
+
+
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Button } from '@/components/ui/button'
@@ -35,9 +35,7 @@ export default function PersonalInfoPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50">
-            <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-                <Navbar />
-            </div>
+
 
             <main className="mx-auto max-w-7xl px-4 py-12">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -147,8 +145,8 @@ export default function PersonalInfoPage() {
                                                 variant="outline"
                                                 onClick={() => setGender('male')}
                                                 className={`flex-1 h-14 rounded-2xl font-bold border-2 transition-all ${gender === 'male'
-                                                        ? 'bg-yellow-50 border-yellow-600 text-yellow-600 hover:bg-yellow-50 hover:text-yellow-600'
-                                                        : 'bg-white border-gray-100 text-gray-400 hover:bg-gray-50'
+                                                    ? 'bg-yellow-50 border-yellow-600 text-yellow-600 hover:bg-yellow-50 hover:text-yellow-600'
+                                                    : 'bg-white border-gray-100 text-gray-400 hover:bg-gray-50'
                                                     }`}
                                             >
                                                 Male
@@ -158,8 +156,8 @@ export default function PersonalInfoPage() {
                                                 variant="outline"
                                                 onClick={() => setGender('female')}
                                                 className={`flex-1 h-14 rounded-2xl font-bold border-2 transition-all ${gender === 'female'
-                                                        ? 'bg-yellow-50 border-yellow-600 text-yellow-600 hover:bg-yellow-50 hover:text-yellow-600'
-                                                        : 'bg-white border-gray-100 text-gray-400 hover:bg-gray-50'
+                                                    ? 'bg-yellow-50 border-yellow-600 text-yellow-600 hover:bg-yellow-50 hover:text-yellow-600'
+                                                    : 'bg-white border-gray-100 text-gray-400 hover:bg-gray-50'
                                                     }`}
                                             >
                                                 Female

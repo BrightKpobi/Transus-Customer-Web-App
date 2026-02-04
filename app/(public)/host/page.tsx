@@ -10,7 +10,7 @@ import {
     Calendar,
 } from 'lucide-react'
 
-import Navbar from '@/components/layouts/navbar/Navbar'
+
 import { HostHeroCard } from '@/components/shared/host/HostHeroCard'
 import { StatCard } from '@/components/shared/host/StatCard'
 import { ActionCard } from '@/components/shared/host/ActionCard'
@@ -20,7 +20,7 @@ export default function BecomeAHostPage() {
 
     return (
         <div className="min-h-screen bg-white">
-            <Navbar />
+
             <div className="p-4">
                 <button
                     onClick={() => router.push('/')}
@@ -83,7 +83,7 @@ export default function BecomeAHostPage() {
                     </div>
 
                     <div className="relative group">
-                        <div 
+                        <div
                             onClick={() => router.push('/host/vehicles/1')}
                             className="flex gap-4 p-3 bg-white border border-gray-100 rounded-2xl cursor-pointer hover:shadow-md transition"
                         >
@@ -111,7 +111,7 @@ export default function BecomeAHostPage() {
                             </div>
                         </div>
 
-                        <button 
+                        <button
                             onClick={(e) => {
                                 e.stopPropagation()
                                 router.push('/host/add-vehicle')

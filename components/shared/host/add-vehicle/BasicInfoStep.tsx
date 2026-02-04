@@ -1,6 +1,6 @@
 'use client'
 
-import { VehicleFormData } from '@/app/host/add-vehicle/page'
+import { VehicleFormData } from '@/app/(public)/host/add-vehicle/page'
 import { SelectField } from './SelectField'
 import { InputField } from './InputField'
 

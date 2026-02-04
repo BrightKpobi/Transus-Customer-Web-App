@@ -4,7 +4,7 @@ import React, { useState, useRef } from 'react'
 import { CreditCard, Upload, CheckCircle2, Loader2 } from 'lucide-react'
 
 // Shadcn UI Components
-import Navbar from '@/components/layouts/navbar/Navbar'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardHeader } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'
@@ -45,9 +45,7 @@ export default function KYCPage() {
 
     return (
         <div className="min-h-screen bg-gray-50/50 pb-20 font-sans">
-            <div className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-                <Navbar />
-            </div>
+
 
             <main className="mx-auto max-w-7xl px-4 py-12">
                 <div className="space-y-8">
@@ -76,7 +74,7 @@ export default function KYCPage() {
                                 </SelectTrigger>
                                 <SelectContent className="rounded-xl border-gray-100 shadow-xl bg-white z-50" align="start" side="bottom" sideOffset={8}>
                                     <SelectItem value="drivers-license" className="py-3 font-bold uppercase text-xs tracking-tight">
-                                        Driver's License
+                                        Driver&apos;s License
                                     </SelectItem>
                                     <SelectItem value="passport" className="py-3 font-bold uppercase text-xs tracking-tight">
                                         International Passport

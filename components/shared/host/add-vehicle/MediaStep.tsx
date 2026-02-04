@@ -3,7 +3,7 @@
 import { useRef } from 'react'
 import Image from 'next/image'
 import { ImagePlus, FileText, ChevronRight, X } from 'lucide-react'
-import { VehicleFormData } from '@/app/host/add-vehicle/page'
+import { VehicleFormData } from '@/app/(public)/host/add-vehicle/page'
 
 interface MediaStepProps {
     formData: VehicleFormData
@@ -127,8 +127,8 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
                                 Insurance Document
                             </h5>
                             <p className="text-sm text-gray-500">
-                                {formData.insuranceDocument 
-                                    ? formData.insuranceDocument.name 
+                                {formData.insuranceDocument
+                                    ? formData.insuranceDocument.name
                                     : 'Upload valid insurance document (PDF or image)'
                                 }
                             </p>
@@ -158,8 +158,8 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
                                 Road Worthy Document
                             </h5>
                             <p className="text-sm text-gray-500 truncate">
-                                {formData.roadWorthyDocument 
-                                    ? formData.roadWorthyDocument.name 
+                                {formData.roadWorthyDocument
+                                    ? formData.roadWorthyDocument.name
                                     : 'Upload valid road worthy document (PDF or image)'
                                 }
                             </p>

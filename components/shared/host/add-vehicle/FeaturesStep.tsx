@@ -1,6 +1,6 @@
 'use client'
 
-import { VehicleFormData } from '@/app/host/add-vehicle/page'
+import { VehicleFormData } from '@/app/(public)/host/add-vehicle/page'
 
 interface FeaturesStepProps {
     formData: VehicleFormData
@@ -84,8 +84,8 @@ export function FeaturesStep({ formData, updateFormData }: FeaturesStepProps) {
                                     onClick={() => toggleFeature(feature)}
                                     className={`
                                         px-4 py-2.5 rounded-full text-sm font-medium border transition
-                                        ${isSelected 
-                                            ? 'bg-amber-400 border-amber-400 text-white' 
+                                        ${isSelected
+                                            ? 'bg-amber-400 border-amber-400 text-white'
                                             : 'bg-white border-gray-200 text-gray-700 hover:border-amber-400'
                                         }
                                     `}

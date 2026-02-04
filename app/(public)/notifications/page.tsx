@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import Navbar from "@/components/layouts/navbar/Navbar";
+
 import { ChevronLeft, BellOff, Info } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -10,7 +10,7 @@ export default function NotificationsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar />
+
 
       <main className="max-w-7xl mx-auto px-4 py-8">
         <div className="flex items-center mb-6">

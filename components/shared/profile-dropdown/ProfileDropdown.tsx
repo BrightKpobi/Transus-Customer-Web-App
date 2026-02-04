@@ -60,10 +60,10 @@ export default function ProfileDropdown() {
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild className="cursor-pointer hover:bg-gray-50 transition-colors">
                         <Link href="/notifications" className="flex items-center">
-                            <Link href="/inbox" className="flex items-center">
-                                <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
-                                <span className="font-medium text-sm">Notifications</span>
-                            </Link>
+
+                            <MessageSquare className="mr-2 h-4 w-4 text-gray-500" />
+                            <span className="font-medium text-sm">Notifications</span>
+
                             <span className="font-medium text-sm">Inbox</span>
                         </Link>
                     </DropdownMenuItem>

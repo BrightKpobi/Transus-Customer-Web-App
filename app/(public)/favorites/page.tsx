@@ -4,7 +4,6 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MoreVertical, Calendar, ChevronLeft } from "lucide-react";
-import Navbar from "@/components/layouts/navbar/Navbar";
 import { useRouter } from "next/navigation";
 
 import { useFavorites } from "@/components/shared/car-carousel/FavoritesContext";
@@ -36,7 +35,7 @@ export default function FavouritesPage() {
 
     return (
         <div className="min-h-screen bg-white">
-            <Navbar />
+
             <div className="mx-auto max-w-7xl px-4 py-6">
                 <BackButton />
                 <h1 className="text-2xl font-bold mb-6">Favorites</h1>

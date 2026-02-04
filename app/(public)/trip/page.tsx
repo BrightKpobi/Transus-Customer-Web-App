@@ -3,7 +3,6 @@
 import React from 'react'
 import Image from 'next/image'
 import { MoreVertical, Calendar, ChevronLeft } from 'lucide-react'
-import Navbar from '@/components/layouts/navbar/Navbar'
 import { useRouter } from 'next/navigation'
 
 // Mock Data from your screenshot
@@ -54,7 +53,6 @@ export default function TripPage() {
     );
     return (
         <div className="min-h-screen bg-white">
-            <Navbar />
             <div className="mx-auto max-w-7xl px-4 py-6">
                 <BackButton />
                 <div className="max-w-7xl mx-auto">

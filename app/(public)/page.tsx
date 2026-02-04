@@ -1,7 +1,5 @@
 "use client";
 
-import Navbar from "@/components/layouts/navbar/Navbar";
-import Footer from "@/components/layouts/footer/Footer";
 import Hero from "@/components/hero/Hero";
 import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
 import { AccraCars, LegonCars, CantonmentsCars } from "@/data/CarsData";
@@ -9,7 +7,7 @@ import { AccraCars, LegonCars, CantonmentsCars } from "@/data/CarsData";
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground transition-colors duration-300">
-      <Navbar />
+
 
       <Hero />
 
@@ -50,7 +48,6 @@ export default function Home() {
 
       </div>
 
-      <Footer />
     </main>
   );
 }

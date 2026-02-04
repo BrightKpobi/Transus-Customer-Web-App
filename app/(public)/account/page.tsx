@@ -6,7 +6,7 @@ import { User, ShieldCheck, CreditCard, Car, Wallet, Info, Sun, Moon, Monitor, }
 import { AccountHeader } from '@/components/shared/account/AccountHeader'
 import { AccountSection } from '@/components/shared/account/AccountSection'
 import { AccountItem } from '@/components/shared/account/AccountItem'
-import Navbar from '@/components/layouts/navbar/Navbar'
+
 
 
 import { ModeToggle } from '@/components/layouts/navbar/ThemeToggleBtn'
@@ -16,7 +16,7 @@ export default function AccountPage() {
 
     return (
         <div className="min-h-screen bg-gray-50   ">
-            <Navbar />
+
             <div className="mx-auto max-w-7xl px-4 py-6 space-y-8 ">
 
                 <AccountHeader />

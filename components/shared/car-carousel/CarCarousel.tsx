@@ -16,7 +16,7 @@ import {
 } from "@/components/ui/carousel"
 
 interface CarCarouselProps {
-    title: string
+    title?: string
     data: Car[]
     slug: string
 }
@@ -24,22 +24,27 @@ interface CarCarouselProps {
 export function CarCarousel({ title, data, slug }: CarCarouselProps) {
     const { favorites, toggleFavorite } = useFavorites();
     return (
-        <div className="w-full max-w-7xl mx-auto px-4 py-8 ">
+        <div className="w-full max-w-7xl mx-auto px-4 py-4 ">
             <Carousel opts={{ align: "start", loop: true }} className="w-full">
-                <div className="flex items-center justify-between mb-6">
-                    <Link
-                        href={`/cars/${slug}`}
-                        className="group flex items-center gap-1 hover:opacity-70 transition"
-                    >
+                {title && (
+                    <div className="flex items-center justify-between mb-6">
                         <h2 className="text-2xl font-bold">{title}</h2>
-                        <ChevronRight className="h-6 w-6 mt-1 transition-transform group-hover:translate-x-1" />
-                    </Link>
 
-                    <div className="relative flex gap-2 mr-12">
-                        <CarouselPrevious className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
-                        <CarouselNext className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
+                        <div className="relative flex gap-2 mr-12">
+                            <CarouselPrevious className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
+                            <CarouselNext className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
+                        </div>
                     </div>
-                </div>
+                )}
+
+                {!title && (
+                    <div className="flex justify-end mb-6">
+                        <div className="relative flex gap-2 mr-12">
+                            <CarouselPrevious className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
+                            <CarouselNext className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
+                        </div>
+                    </div>
+                )}
 
                 <CarouselContent className="-ml-2 md:-ml-4">
                     {data.map((car) => {

@@ -24,7 +24,7 @@ export default function Home() {
 
         <section>
           <CarCarousel
-            title="Newer cars in East Legon"
+            // title="Newer cars in East Legon" 
             data={LegonCars}
             slug="east-legon"
           />
@@ -32,7 +32,7 @@ export default function Home() {
 
         <section>
           <CarCarousel
-            title="Check our latest SUVs"
+            // title="Check our latest SUVs"
             data={CantonmentsCars}
             slug="contanments"
           />

@@ -1,57 +1,20 @@
 
-
-import CarGrid from "@/components/shared/cars/CarGrid";
+import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
 import CarFilterBar from "@/components/shared/cars/CarFilter";
+import { CantonmentsCars } from "@/data/CarsData";
 
-type SearchParams = {
-    location?: string;
-    startDate?: string;
-    endDate?: string;
-};
+import React from 'react'
 
-export default async function CarsPage({
-    searchParams,
-}: {
-    searchParams: SearchParams;
-}) {
-    // Later this will be replaced with DB/API logic
-    const cars = [
-        {
-            id: "1",
-            name: "Toyota Corolla",
-            pricePerDay: 45,
-            image: "/cars/car-1.jpg",
-            location: "Accra",
-        },
-        {
-            id: "2",
-            name: "Hyundai Elantra",
-            pricePerDay: 55,
-            image: "/cars/car-2.jpg",
-            location: "Kumasi",
-        },
-        {
-            id: "3",
-            name: "Honda Civic",
-            pricePerDay: 60,
-            image: "/cars/car-3.jpg",
-            location: "Accra",
-        },
-    ];
-
+export default function CarsPage() {
     return (
-        <main >
+        <div>
             <CarFilterBar />
-            <div className="max-w-7xl mx-auto px-4 py-8">
-                <h1 className="text-2xl font-semibold mb-6">
-                    Available cars
-                </h1>
 
-                <CarGrid cars={cars} />
+            <div className="space-y-5">
+                <CarCarousel title="Available Cars" data={CantonmentsCars} slug="cantonments" />
+                <CarCarousel data={CantonmentsCars} slug="cantonments" />
             </div>
 
-
-
-        </main>
-    );
+        </div>
+    )
 }

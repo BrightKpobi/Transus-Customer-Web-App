@@ -44,7 +44,7 @@ const CarFilterBar: React.FC = () => {
                         label="Make"
                         name="make"
                         placeholder="All Makes"
-                        options={['Toyota', 'BMW', 'Tesla', 'Ford', 'Porsche']}
+                        options={['Toyota', 'BMW', 'Honda', 'Ford', 'Porsche']}
                         onChange={handleSelectChange}
                     />
 

@@ -21,7 +21,7 @@ const AdvancedFilterDrawer: React.FC<AdvancedFilterProps> = ({ onApply }) => {
     return (
         <Sheet>
             <SheetTrigger asChild>
-                <button className="text-xs font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest flex items-center gap-2">
+                <button className="text-xs font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest flex items-center gap-2 cursor-pointer">
                     <span>+ Advanced Options</span>
                 </button>
             </SheetTrigger>
@@ -29,7 +29,7 @@ const AdvancedFilterDrawer: React.FC<AdvancedFilterProps> = ({ onApply }) => {
             <SheetContent className="w-[400px] sm:w-[450px] bg-white border-l border-gray-200 p-0 flex flex-col overflow-hidden shadow-2xl">
                 <div className="p-8 pb-6 bg-gray-50/50">
                     <SheetHeader>
-                        <SheetTitle className="text-2xl font-black uppercase tracking-tighter text-gray-900">
+                        <SheetTitle className="text-2xl font-bold uppercase tracking-tighter text-gray-900">
                             Advanced Filters
                         </SheetTitle>
                         <SheetDescription className="text-gray-500 font-medium">
@@ -70,10 +70,10 @@ const AdvancedFilterDrawer: React.FC<AdvancedFilterProps> = ({ onApply }) => {
                 </div>
 
                 <div className="p-6 bg-white border-t border-gray-100 flex gap-4">
-                    <Button className="flex-1 bg-black text-white hover:bg-gray-800 rounded-xl h-14 font-bold uppercase tracking-wide transition-all">
+                    <Button className="flex-1 bg-black text-white hover:bg-gray-800 rounded-xl h-12 font-bold uppercase tracking-wide transition-all">
                         Apply Filters
                     </Button>
-                    <Button variant="outline" className="rounded-xl h-14 px-8 border-gray-200 hover:bg-gray-50 font-bold uppercase text-xs">
+                    <Button variant="outline" className="rounded-xl h-12 px-8 border-gray-200 hover:bg-gray-50 font-bold uppercase text-xs">
                         Reset
                     </Button>
                 </div>

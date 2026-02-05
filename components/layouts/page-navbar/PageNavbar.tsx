@@ -38,7 +38,7 @@ export function PageNavbar({
                         {showBack && (
                             <button
                                 onClick={handleBack}
-                                className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group"
+                                className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group cursor-pointer"
                             >
                                 <ChevronLeft
                                     size={20}

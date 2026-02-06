@@ -1,20 +1,18 @@
-
 import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
 import CarFilterBar from "@/components/shared/cars/CarFilter";
-import { CantonmentsCars } from "@/data/CarsData";
+import { AllCars } from "@/data/CarsData";
+import { CarGrid } from "@/components/shared/car-carousel/CarGrid";
 
-import React from 'react'
+import React from "react";
 
 export default function CarsPage() {
-    return (
-        <div>
-            <CarFilterBar />
+  return (
+    <div>
+      <CarFilterBar />
 
-            <div className="space-y-5">
-                <CarCarousel title="Available Cars" data={CantonmentsCars} slug="cantonments" />
-                <CarCarousel data={CantonmentsCars} slug="cantonments" />
-            </div>
-
-        </div>
-    )
+      <div className="space-y-5">
+        <CarGrid data={AllCars} slug="all-cars" title="All Cars" />
+      </div>
+    </div>
+  );
 }

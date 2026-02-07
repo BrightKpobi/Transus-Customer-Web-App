@@ -1,44 +1,16 @@
-
-
-import CarGrid from "@/components/shared/cars/CarGrid";
+import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
 import CarFilterBar from "@/components/shared/cars/CarFilter";
+import { AllCars } from "@/data/CarsData";
+import { CarGrid } from "@/components/shared/car-carousel/CarGrid";
 
-type SearchParams = {
-    location?: string;
-    startDate?: string;
-    endDate?: string;
-};
+import React from "react";
 
-export default async function CarsPage({
-    searchParams,
-}: {
-    searchParams: SearchParams;
-}) {
-    // Later this will be replaced with DB/API logic
-    const cars = [
-        {
-            id: "1",
-            name: "Toyota Corolla",
-            pricePerDay: 45,
-            image: "/cars/car-1.jpg",
-            location: "Accra",
-        },
-        {
-            id: "2",
-            name: "Hyundai Elantra",
-            pricePerDay: 55,
-            image: "/cars/car-2.jpg",
-            location: "Kumasi",
-        },
-        {
-            id: "3",
-            name: "Honda Civic",
-            pricePerDay: 60,
-            image: "/cars/car-3.jpg",
-            location: "Accra",
-        },
-    ];
+export default function CarsPage() {
+  return (
+    <div>
+      <CarFilterBar />
 
+<<<<<<< HEAD
     return (
         <main className="bg-white dark:bg-gray-950 min-h-screen">
             <CarFilterBar />
@@ -51,4 +23,11 @@ export default async function CarsPage({
             </div>
         </main>
     );
+=======
+      <div className="space-y-5">
+        <CarGrid data={AllCars} slug="all-cars" title="All Cars" />
+      </div>
+    </div>
+  );
+>>>>>>> d4d90423601f6e1734d458dc0e0915ea0d886544
 }

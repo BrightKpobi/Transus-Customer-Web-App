@@ -21,7 +21,11 @@ const AdvancedFilterDrawer: React.FC<AdvancedFilterProps> = ({ onApply }) => {
     return (
         <Sheet>
             <SheetTrigger asChild>
+<<<<<<< HEAD
                 <button className="text-xs font-bold text-gray-400 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest flex items-center gap-2">
+=======
+                <button className="text-xs font-bold text-gray-400 hover:text-black transition-colors uppercase tracking-widest flex items-center gap-2 cursor-pointer">
+>>>>>>> d4d90423601f6e1734d458dc0e0915ea0d886544
                     <span>+ Advanced Options</span>
                 </button>
             </SheetTrigger>
@@ -29,7 +33,11 @@ const AdvancedFilterDrawer: React.FC<AdvancedFilterProps> = ({ onApply }) => {
             <SheetContent className="w-[400px] sm:w-[450px] bg-white dark:bg-gray-950 border-l border-gray-200 dark:border-gray-800 p-0 flex flex-col overflow-hidden shadow-2xl dark:shadow-gray-900/50">
                 <div className="p-8 pb-6 bg-gray-50/50 dark:bg-gray-900/50">
                     <SheetHeader>
+<<<<<<< HEAD
                         <SheetTitle className="text-2xl font-black uppercase tracking-tighter text-gray-900 dark:text-gray-100">
+=======
+                        <SheetTitle className="text-2xl font-bold uppercase tracking-tighter text-gray-900">
+>>>>>>> d4d90423601f6e1734d458dc0e0915ea0d886544
                             Advanced Filters
                         </SheetTitle>
                         <SheetDescription className="text-gray-500 dark:text-gray-400 font-medium">
@@ -69,11 +77,19 @@ const AdvancedFilterDrawer: React.FC<AdvancedFilterProps> = ({ onApply }) => {
                     </FilterSection>
                 </div>
 
+<<<<<<< HEAD
                 <div className="p-6 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800 flex gap-4">
                     <Button className="flex-1 bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 rounded-xl h-14 font-bold uppercase tracking-wide transition-all">
                         Apply Filters
                     </Button>
                     <Button variant="outline" className="rounded-xl h-14 px-8 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 font-bold uppercase text-xs">
+=======
+                <div className="p-6 bg-white border-t border-gray-100 flex gap-4">
+                    <Button className="flex-1 bg-black text-white hover:bg-gray-800 rounded-xl h-12 font-bold uppercase tracking-wide transition-all">
+                        Apply Filters
+                    </Button>
+                    <Button variant="outline" className="rounded-xl h-12 px-8 border-gray-200 hover:bg-gray-50 font-bold uppercase text-xs">
+>>>>>>> d4d90423601f6e1734d458dc0e0915ea0d886544
                         Reset
                     </Button>
                 </div>

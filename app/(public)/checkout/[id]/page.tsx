@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { AccraCars, LegonCars, Car } from "@/data/CarsData";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,15 +16,15 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+=======
+import React from "react";
+>>>>>>> d4d90423601f6e1734d458dc0e0915ea0d886544
 
-export default async function CheckoutPage({
-    params
-}: {
-    params: Promise<{ id: string }>
-}) {
-    // Unwrapping the async params for Next.js 16 compatibility
-    const { id } = await params;
+function page() {
+  return <div>page</div>;
+}
 
+<<<<<<< HEAD
     // Combining data sets and finding the specific car
     const allCars = [...AccraCars, ...LegonCars];
     const car = allCars.find((c) => String(c.id) === id);
@@ -188,3 +189,6 @@ export default async function CheckoutPage({
         </main>
     );
 }
+=======
+export default page;
+>>>>>>> d4d90423601f6e1734d458dc0e0915ea0d886544

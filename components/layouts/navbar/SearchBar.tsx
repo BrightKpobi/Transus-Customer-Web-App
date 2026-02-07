@@ -32,10 +32,10 @@ export default function SearchBar({ visible }: { visible: boolean }) {
                 }`}
         >
             <form onSubmit={handleSearch}>
-                <div className="flex items-center gap-3 rounded-full bg-white px-4 py-2 ring-1 ring-black/10">
+                <div className="flex items-center gap-3 rounded-full bg-white dark:bg-gray-800 px-4 py-2 ring-1 ring-black/10 dark:ring-white/10">
 
                     {/* Icon */}
-                    <Car size={16} className="text-gray-400" />
+                    <Car size={16} className="text-gray-400 dark:text-gray-500" />
 
                     {/* Input */}
                     <input
@@ -44,13 +44,13 @@ export default function SearchBar({ visible }: { visible: boolean }) {
                         onChange={(e) => setSearchQuery(e.target.value)}
                         onKeyPress={handleKeyPress}
                         placeholder="Search cars..."
-                        className="w-40 md:w-56 bg-transparent outline-none text-sm font-semibold text-gray-900 placeholder:text-gray-400"
+                        className="w-40 md:w-56 bg-transparent outline-none text-sm font-semibold text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500"
                     />
 
                     {/* Button */}
                     <button
                         type="submit"
-                        className="flex h-8 w-8 items-center justify-center rounded-full bg-black text-white hover:bg-gray-900 transition disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white text-white dark:text-black hover:bg-gray-900 dark:hover:bg-gray-100 transition disabled:opacity-50 disabled:cursor-not-allowed"
                         disabled={!searchQuery.trim()}
                     >
                         <Search size={14} strokeWidth={3} />

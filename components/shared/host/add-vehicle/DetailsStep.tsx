@@ -61,16 +61,16 @@ export function DetailsStep({ formData, updateFormData }: DetailsStepProps) {
 
             {/* Pickup Locations - Special styling with icon */}
             <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-900">
+                <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100">
                     Pickup Locations
                 </label>
                 <button
                     type="button"
-                    className="w-full flex items-center justify-between px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl text-left hover:bg-gray-100 transition"
+                    className="w-full flex items-center justify-between px-4 py-4 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-left hover:bg-gray-100 dark:hover:bg-gray-700 transition"
                 >
                     <div className="flex items-center gap-3">
                         <MapPin size={18} className="text-gray-400" />
-                        <span className={formData.pickupLocations.length > 0 ? 'text-gray-900' : 'text-gray-400'}>
+                        <span className={formData.pickupLocations.length > 0 ? 'text-gray-900 dark:text-gray-100' : 'text-gray-400 dark:text-gray-500'}>
                             {formData.pickupLocations.length > 0
                                 ? formData.pickupLocations.join(', ')
                                 : 'Select pickup locations'
@@ -102,7 +102,7 @@ export function DetailsStep({ formData, updateFormData }: DetailsStepProps) {
                                     px-3 py-2 rounded-full text-sm font-medium border transition
                                     ${isSelected
                                         ? 'bg-amber-400 border-amber-400 text-white'
-                                        : 'bg-white border-gray-200 text-gray-700 hover:border-amber-400'
+                                        : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-amber-400'
                                     }
                                 `}
                             >

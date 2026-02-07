@@ -36,8 +36,8 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                     </Link>
 
                     <div className="relative flex gap-2 mr-12">
-                        <CarouselPrevious className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
-                        <CarouselNext className="static translate-y-0 border-none bg-transparent hover:bg-black hover:text-white active:bg-black active:text-white transition-all hidden md:flex" />
+                        <CarouselPrevious className="static translate-y-0 border-none bg-transparent hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black active:bg-black dark:active:bg-white active:text-white dark:active:text-black transition-all hidden md:flex" />
+                        <CarouselNext className="static translate-y-0 border-none bg-transparent hover:bg-black dark:hover:bg-white hover:text-white dark:hover:text-black active:bg-black dark:active:bg-white active:text-white dark:active:text-black transition-all hidden md:flex" />
                     </div>
                 </div>
 
@@ -53,7 +53,7 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                     href={`/checkout/${car.id}`}
                                     className="block space-y-3 group cursor-pointer"
                                 >
-                                    <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-gray-100">
+                                    <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800">
                                         <Image
                                             src={car.image}
                                             alt={car.name}
@@ -67,7 +67,7 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                                 e.stopPropagation();
                                                 toggleFavorite(String(car.id));
                                             }}
-                                            className="absolute top-2 left-2 h-8 w-8 rounded-full bg-white/90 flex items-center justify-center"
+                                            className="absolute top-2 left-2 h-8 w-8 rounded-full bg-white/90 dark:bg-gray-900/90 flex items-center justify-center"
                                         >
                                             <Heart
                                                 size={16}
@@ -92,27 +92,27 @@ export function CarCarousel({ title, data, slug }: CarCarouselProps) {
                                                 ({car.trips} trips)
                                             </span>
                                         </div>
-                                        <p className="text-xs text-gray-500">
+                                        <p className="text-xs text-gray-500 dark:text-gray-400">
                                             Hosted by {car.host}
                                         </p>
                                         <div className="flex flex-wrap gap-1">
-                                            <span className="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full">
+                                            <span className="text-[10px] px-2 py-0.5 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-full">
                                                 {car.seats}
                                             </span>
-                                            <span className="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full">
+                                            <span className="text-[10px] px-2 py-0.5 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-full">
                                                 {car.fuel}
                                             </span>
-                                            <span className="text-[10px] px-2 py-0.5 bg-gray-100 rounded-full">
+                                            <span className="text-[10px] px-2 py-0.5 bg-gray-100 dark:bg-gray-800 dark:text-gray-300 rounded-full">
                                                 {car.transmission}
                                             </span>
                                         </div>
                                         <div className="flex items-center justify-between">
-                                            <p className="text-sm font-bold text-blue-600">
+                                            <p className="text-sm font-bold text-blue-600 dark:text-blue-400">
                                                 GHS {car.pricePerDay.toFixed(2)}
-                                                <span className="text-gray-400 font-medium"> / day</span>
+                                                <span className="text-gray-400 dark:text-gray-500 font-medium"> / day</span>
                                             </p>
                                             {car.available && (
-                                                <span className="text-[10px] font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">
+                                                <span className="text-[10px] font-semibold text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-900/30 px-2 py-0.5 rounded-full">
                                                     Available
                                                 </span>
                                             )}

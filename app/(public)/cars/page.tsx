@@ -40,18 +40,15 @@ export default async function CarsPage({
     ];
 
     return (
-        <main >
+        <main className="bg-white dark:bg-gray-950 min-h-screen">
             <CarFilterBar />
             <div className="max-w-7xl mx-auto px-4 py-8">
-                <h1 className="text-2xl font-semibold mb-6">
+                <h1 className="text-2xl font-semibold mb-6 text-gray-900 dark:text-gray-100">
                     Available cars
                 </h1>
 
                 <CarGrid cars={cars} />
             </div>
-
-
-
         </main>
     );
 }

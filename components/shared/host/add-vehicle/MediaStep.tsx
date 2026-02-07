@@ -47,10 +47,10 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
         <div className="space-y-8">
             {/* Vehicle Photos Section */}
             <div>
-                <h4 className="text-base font-bold text-gray-900">
+                <h4 className="text-base font-bold text-gray-900 dark:text-gray-100">
                     Vehicle Photos (Max 10)
                 </h4>
-                <p className="text-sm text-gray-500 mt-1 mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">
                     Add high-quality photos of your vehicle to attract more renters.
                 </p>
 
@@ -59,7 +59,7 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
                     {formData.photos.map((photo, index) => (
                         <div
                             key={index}
-                            className="relative w-28 h-28 rounded-xl overflow-hidden border border-gray-200"
+                            className="relative w-28 h-28 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700"
                         >
                             <Image
                                 src={URL.createObjectURL(photo)}
@@ -82,7 +82,7 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
                         <button
                             type="button"
                             onClick={() => photoInputRef.current?.click()}
-                            className="w-28 h-28 border-2 border-dashed border-gray-200 rounded-xl flex flex-col items-center justify-center gap-2 hover:border-amber-400 hover:bg-amber-50 transition"
+                            className="w-28 h-28 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-xl flex flex-col items-center justify-center gap-2 hover:border-amber-400 hover:bg-amber-50 dark:hover:bg-amber-900/30 transition"
                         >
                             <ImagePlus size={28} className="text-amber-500" />
                             <span className="text-xs font-medium text-amber-500">Add Photo</span>
@@ -101,14 +101,14 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
             </div>
 
             {/* Divider */}
-            <div className="border-t border-gray-200" />
+            <div className="border-t border-gray-200 dark:border-gray-700" />
 
             {/* Vehicle Documents Section */}
             <div>
-                <h4 className="text-base font-bold text-gray-900">
+                <h4 className="text-base font-bold text-gray-900 dark:text-gray-100">
                     Vehicle Documents
                 </h4>
-                <p className="text-sm text-gray-500 mt-1 mb-4">
+                <p className="text-sm text-gray-500 dark:text-gray-400 mt-1 mb-4">
                     Upload required documents for your vehicle.
                 </p>
 
@@ -117,16 +117,16 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
                     <button
                         type="button"
                         onClick={() => insuranceInputRef.current?.click()}
-                        className="w-full flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition"
+                        className="w-full flex items-center gap-4 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
                     >
-                        <div className="p-3 bg-gray-100 rounded-xl">
+                        <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl">
                             <FileText size={24} className="text-gray-400" />
                         </div>
                         <div className="flex-1 text-left">
-                            <h5 className="font-semibold text-gray-900">
+                            <h5 className="font-semibold text-gray-900 dark:text-gray-100">
                                 Insurance Document
                             </h5>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 dark:text-gray-400">
                                 {formData.insuranceDocument
                                     ? formData.insuranceDocument.name
                                     : 'Upload valid insurance document (PDF or image)'
@@ -148,16 +148,16 @@ export function MediaStep({ formData, updateFormData }: MediaStepProps) {
                     <button
                         type="button"
                         onClick={() => roadWorthyInputRef.current?.click()}
-                        className="w-full flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 transition"
+                        className="w-full flex items-center gap-4 p-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl hover:bg-gray-50 dark:hover:bg-gray-800 transition"
                     >
-                        <div className="p-3 bg-gray-100 rounded-xl">
+                        <div className="p-3 bg-gray-100 dark:bg-gray-800 rounded-xl">
                             <FileText size={24} className="text-gray-400" />
                         </div>
                         <div className="flex-1 text-left">
-                            <h5 className="font-semibold text-gray-900">
+                            <h5 className="font-semibold text-gray-900 dark:text-gray-100">
                                 Road Worthy Document
                             </h5>
-                            <p className="text-sm text-gray-500 truncate">
+                            <p className="text-sm text-gray-500 dark:text-gray-400 truncate">
                                 {formData.roadWorthyDocument
                                     ? formData.roadWorthyDocument.name
                                     : 'Upload valid road worthy document (PDF or image)'

@@ -72,10 +72,10 @@ export default function AddVehiclePage() {
     const BackButton = () => (
         <button
             onClick={() => router.back()}
-            className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition mb-4"
+            className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition mb-4"
             aria-label="Back"
         >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900 dark:text-gray-100"><polyline points="15 18 9 12 15 6"></polyline></svg>
         </button>
     );
 
@@ -209,7 +209,7 @@ export default function AddVehiclePage() {
     }
 
     return (
-        <div className="min-h-screen bg-white flex flex-col">
+        <div className="min-h-screen bg-white dark:bg-gray-950 flex flex-col">
 
             <div className="mx-auto w-full max-w-7xl px-4 flex-1 flex flex-col">
                 {/* Back Button below header */}
@@ -225,7 +225,7 @@ export default function AddVehiclePage() {
                     {renderStep()}
                 </div>
                 {/* Bottom Navigation */}
-                <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-4 py-4">
+                <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-950 border-t border-gray-100 dark:border-gray-800 px-4 py-4">
                     <div className="mx-auto max-w-7xl flex items-center justify-between">
                         {currentStep > 1 ? (
                             <button

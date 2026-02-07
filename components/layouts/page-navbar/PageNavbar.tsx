@@ -28,7 +28,7 @@ export function PageNavbar({
     }
 
     return (
-        <div className="sticky top-0 z-50 bg-gray-50 border-b border-gray-200 ">
+        <div className="sticky top-0 z-50 bg-gray-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800">
             <div className="mx-auto max-w-7xl px-4 py-4">
 
                 <div className="grid grid-cols-3 items-center">
@@ -38,7 +38,7 @@ export function PageNavbar({
                         {showBack && (
                             <button
                                 onClick={handleBack}
-                                className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group cursor-pointer"
+                                className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors group cursor-pointer"
                             >
                                 <ChevronLeft
                                     size={20}
@@ -49,7 +49,7 @@ export function PageNavbar({
                         )}
 
                         {title && titlePosition === 'left' && (
-                            <span className="text-sm font-semibold text-gray-800">
+                            <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 {title}
                             </span>
                         )}
@@ -58,7 +58,7 @@ export function PageNavbar({
                     {/* CENTER */}
                     <div className="flex justify-center">
                         {title && titlePosition === 'center' && (
-                            <span className="text-sm font-semibold text-gray-800">
+                            <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
                                 {title}
                             </span>
                         )}
@@ -67,7 +67,7 @@ export function PageNavbar({
                     {/* RIGHT */}
                     <div className="flex items-center justify-end gap-2">
                         {title && titlePosition === 'right' && (
-                            <span className="text-sm font-semibold text-gray-800 mr-2">
+                            <span className="text-sm font-semibold text-gray-800 dark:text-gray-200 mr-2">
                                 {title}
                             </span>
                         )}

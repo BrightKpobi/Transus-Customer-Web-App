@@ -1,13 +1,11 @@
 'use client'
 
-import { useTheme } from 'next-themes' // 🔑 import this
-import { User, ShieldCheck, CreditCard, Car, Wallet, Info, Sun, Moon, Monitor, } from 'lucide-react'
+import { useTheme } from 'next-themes'
+import { User, ShieldCheck, CreditCard, Car, Wallet, Info } from 'lucide-react'
 
 import { AccountHeader } from '@/components/shared/account/AccountHeader'
 import { AccountSection } from '@/components/shared/account/AccountSection'
 import { AccountItem } from '@/components/shared/account/AccountItem'
-
-
 
 import { ModeToggle } from '@/components/layouts/navbar/ThemeToggleBtn'
 
@@ -15,7 +13,7 @@ export default function AccountPage() {
     const { theme, setTheme } = useTheme()
 
     return (
-        <div className="min-h-screen bg-gray-50   ">
+        <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
 
             <div className="mx-auto max-w-7xl px-4 py-6 space-y-8 ">
 
@@ -67,18 +65,12 @@ export default function AccountPage() {
 
                 {/* Theme toggle section  */}
                 <section className="space-y-3">
-                    <h2 className="text-xs font-bold text-gray-400 uppercase tracking-wider px-1">
+                    <h2 className="text-xs font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider px-1">
                         Appearance
                     </h2>
 
-                    <div className='grid grid-cols-3 gap-3'>
-                        <div>
-                            <ModeToggle />
-                        </div>
-                    </div>
+                    <ModeToggle />
                 </section>
-
-
 
             </div>
         </div>

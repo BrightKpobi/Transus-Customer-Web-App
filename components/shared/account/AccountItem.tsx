@@ -34,7 +34,7 @@ export function AccountItem({
                 {/* Icon: Scales and changes to Yellow-600 on hover */}
                 <div className={cn(
                     "transition-all duration-300 ease-out",
-                    isSelected ? "text-yellow-600" : "text-gray-400 group-hover:text-yellow-600 group-hover:scale-110"
+                    isSelected ? "text-yellow-600" : "text-gray-400 dark:text-gray-500 group-hover:text-yellow-600 group-hover:scale-110"
                 )}>
                     {icon}
                 </div>
@@ -42,12 +42,12 @@ export function AccountItem({
                 <div className={cn("text-left transition-transform duration-300 ease-out", !isGrid && "group-hover:translate-x-2")}>
                     <p className={cn(
                         "text-[17px] font-bold leading-tight transition-colors duration-300",
-                        isSelected ? "text-yellow-600" : "text-gray-900"
+                        isSelected ? "text-yellow-600" : "text-gray-900 dark:text-gray-100"
                     )}>
                         {title}
                     </p>
                     {subtitle && (
-                        <p className="text-[14px] text-gray-400 mt-1 font-medium transition-colors group-hover:text-gray-600">
+                        <p className="text-[14px] text-gray-400 dark:text-gray-500 mt-1 font-medium transition-colors group-hover:text-gray-600 dark:group-hover:text-gray-400">
                             {subtitle}
                         </p>
                     )}
@@ -59,7 +59,7 @@ export function AccountItem({
                     size={20}
                     className={cn(
                         "transition-all duration-300",
-                        isSelected ? "text-yellow-600" : "text-gray-200 group-hover:text-yellow-600 group-hover:translate-x-2"
+                        isSelected ? "text-yellow-600" : "text-gray-200 dark:text-gray-700 group-hover:text-yellow-600 group-hover:translate-x-2"
                     )}
                 />
             )}
@@ -68,8 +68,8 @@ export function AccountItem({
 
     const baseClassName = cn(
         'group block w-full outline-none relative transition-all duration-300',
-        'rounded-none bg-white', // Strictly no rounding
-        isSelected ? 'bg-gray-50' : 'bg-white',
+        'rounded-none bg-white dark:bg-gray-900', // Strictly no rounding
+        isSelected ? 'bg-gray-50 dark:bg-gray-800' : 'bg-white dark:bg-gray-900',
         'active:opacity-70' // Simple feedback for click
     )
 
@@ -99,7 +99,7 @@ export function AccountSection({
 }) {
     return (
         <section className="py-4">
-            <h2 className="text-[12px] font-black text-gray-400 uppercase tracking-[0.3em] px-6 mb-2">
+            <h2 className="text-[12px] font-black text-gray-400 dark:text-gray-500 uppercase tracking-[0.3em] px-6 mb-2">
                 {title}
             </h2>
 

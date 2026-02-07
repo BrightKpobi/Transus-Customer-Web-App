@@ -7,11 +7,11 @@ import { Card, CardContent } from '@/components/ui/card'
 export default function WalletOverview() {
     return (
         <section className="space-y-4 lg:space-y-6">
-            <h1 className="text-xl lg:text-2xl font-bold uppercase tracking-tighter text-gray-900">
+            <h1 className="text-xl lg:text-2xl font-bold uppercase tracking-tighter text-gray-900 dark:text-gray-100">
                 Wallet Overview
             </h1>
 
-            <Card className="border border-gray-200 overflow-hidden rounded-[24px] lg:rounded-[32px] bg-gray-900 text-white shadow-none">
+            <Card className="border border-gray-200 dark:border-gray-800 overflow-hidden rounded-[24px] lg:rounded-[32px] bg-gray-900 text-white shadow-none">
                 <CardContent className="p-6 lg:p-10">
                     <div className="flex justify-between items-start mb-8 lg:mb-12">
                         <div className="space-y-1 lg:space-y-2">

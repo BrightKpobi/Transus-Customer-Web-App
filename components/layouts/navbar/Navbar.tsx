@@ -8,6 +8,7 @@ import Logo from "@/components/layouts/navbar/Logo"
 import SearchBar from "@/components/layouts/navbar/SearchBar"
 // import NavLinks from "@/components/layouts/navbar/NavLinks" 
 import UserMenu from "@/components/layouts/navbar/UserMenu"
+import ThemeToggle from "@/components/layouts/navbar/ThemeToggle"
 
 
 export default function Navbar() {
@@ -25,8 +26,8 @@ export default function Navbar() {
 
     return (
         <header
-            className={`sticky top-0 z-50 bg-white transition-all duration-200 border-b ${showSearch
-                ? 'border-gray-200 ' // Visible border
+            className={`sticky top-0 z-50 bg-white dark:bg-gray-950 transition-all duration-200 border-b ${showSearch
+                ? 'border-gray-200 dark:border-gray-800' // Visible border
                 : 'border-transparent'
                 }`}
         >
@@ -41,8 +42,9 @@ export default function Navbar() {
                     </div>
 
                     {/* Right */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-2">
                         {/* <NavLinks />  */}
+                        <ThemeToggle />
                         <button
                             onClick={() => router.push('/notifications')}
                             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800"

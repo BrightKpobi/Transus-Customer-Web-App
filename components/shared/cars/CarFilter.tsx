@@ -28,7 +28,7 @@ const CarFilterBar: React.FC = () => {
     };
 
     return (
-        <div className="w-full bg-white border-b border-gray-200 py-10 px-6">
+        <div className="w-full bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 py-10 px-6">
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-4 lg:grid-cols-8 gap-4 items-end">
 
@@ -90,13 +90,11 @@ const CarFilterBar: React.FC = () => {
 
                     <Button
                         onClick={handleSearch}
-                        className="w-full bg-black text-white hover:bg-gray-800 rounded-xl h-12 font-bold uppercase tracking-wide transition-all active:scale-[0.98]"
-                    >
-                        Search
-                    </Button>
+                        className="w-full bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200 rounded-xl h-12 font-bold uppercase tracking-wide transition-all active:scale-[0.98]\"
+                    >\n                        Search\n                    </Button>
                 </div>
 
-                <div className="mt-6 flex items-center justify-between border-t border-gray-100 pt-4">
+                <div className="mt-6 flex items-center justify-between border-t border-gray-100 dark:border-gray-800 pt-4">
                     <div className="flex gap-6 items-center">
                         <AdvancedFilterDrawer />
                         <button
@@ -106,7 +104,7 @@ const CarFilterBar: React.FC = () => {
                             Clear All
                         </button>
                     </div>
-                    <p className="text-xs text-gray-400 font-medium">4,200+ matches found</p>
+                    <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">4,200+ matches found</p>
                 </div>
             </div>
         </div>
@@ -123,14 +121,14 @@ interface FilterItemProps {
 
 const FilterItem: React.FC<FilterItemProps> = ({ label, name, placeholder, options, onChange }) => (
     <div className="flex flex-col space-y-2">
-        <label className="text-[11px] font-bold uppercase text-gray-500 tracking-tight ml-1">{label}</label>
+        <label className="text-[11px] font-bold uppercase text-gray-500 dark:text-gray-400 tracking-tight ml-1">{label}</label>
         <Select onValueChange={(v) => onChange(name, v)}>
-            <SelectTrigger className="w-full rounded-xl border-gray-200 bg-gray-50 h-12 focus:ring-1 focus:ring-black focus:bg-white transition-all text-sm font-medium">
+            <SelectTrigger className="w-full rounded-xl border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 h-12 focus:ring-1 focus:ring-black dark:focus:ring-gray-500 focus:bg-white dark:focus:bg-gray-700 transition-all text-sm font-medium">
                 <SelectValue placeholder={placeholder} />
             </SelectTrigger>
-            <SelectContent className="rounded-xl bg-white border-gray-200 shadow-xl overflow-hidden">
+            <SelectContent className="rounded-xl bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700 shadow-xl dark:shadow-gray-900/50 overflow-hidden">
                 {options.map((opt) => (
-                    <SelectItem key={opt} value={opt.toLowerCase()} className="focus:bg-gray-100 cursor-pointer py-3">{opt}</SelectItem>
+                    <SelectItem key={opt} value={opt.toLowerCase()} className="focus:bg-gray-100 dark:focus:bg-gray-800 cursor-pointer py-3">{opt}</SelectItem>
                 ))}
             </SelectContent>
         </Select>

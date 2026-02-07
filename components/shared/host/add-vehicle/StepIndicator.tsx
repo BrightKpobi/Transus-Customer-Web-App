@@ -28,7 +28,7 @@ export function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
                                         ? 'bg-amber-400 text-white' 
                                         : isCurrent 
                                             ? 'bg-amber-400 text-white' 
-                                            : 'bg-gray-200 text-gray-500'
+                                            : 'bg-gray-200 dark:bg-gray-700 text-gray-500 dark:text-gray-400'
                                     }
                                 `}
                             >
@@ -41,7 +41,7 @@ export function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
                             <span
                                 className={`
                                     mt-2 text-xs font-medium
-                                    ${isCompleted || isCurrent ? 'text-gray-900' : 'text-gray-400'}
+                                    ${isCompleted || isCurrent ? 'text-gray-900 dark:text-gray-100' : 'text-gray-400 dark:text-gray-500'}
                                 `}
                             >
                                 {step}
@@ -53,7 +53,7 @@ export function StepIndicator({ steps, currentStep }: StepIndicatorProps) {
                             <div
                                 className={`
                                     flex-1 h-0.5 mx-2 mt-[-20px]
-                                    ${isCompleted ? 'bg-amber-400' : 'bg-gray-200'}
+                                    ${isCompleted ? 'bg-amber-400' : 'bg-gray-200 dark:bg-gray-700'}
                                 `}
                             />
                         )}

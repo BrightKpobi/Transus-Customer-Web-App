@@ -19,16 +19,16 @@ export default function BecomeAHostPage() {
     const router = useRouter()
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-white dark:bg-gray-950">
 
             <div className="p-4">
                 <button
                     onClick={() => router.push('/')}
-                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition"
+                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"
                     aria-label="Back to Home"
                     type="button"
                 >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gray-900 dark:text-gray-100"><polyline points="15 18 9 12 15 6"></polyline></svg>
                 </button>
             </div>
             <div className="mx-auto max-w-7xl px-4 space-y-10 mt-3">
@@ -37,7 +37,7 @@ export default function BecomeAHostPage() {
 
                 {/* Booking Overview */}
                 <section>
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
                         Booking Overview
                     </h3>
 
@@ -51,7 +51,7 @@ export default function BecomeAHostPage() {
 
                 {/* Quick Actions */}
                 <section>
-                    <h3 className="text-lg font-bold text-gray-900 mb-4">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100 mb-4">
                         Quick Actions
                     </h3>
 
@@ -74,7 +74,7 @@ export default function BecomeAHostPage() {
                 {/* My Vehicles */}
                 <section className="pb-20">
                     <div className="flex justify-between items-center mb-4">
-                        <h3 className="text-lg font-bold text-gray-900">
+                        <h3 className="text-lg font-bold text-gray-900 dark:text-gray-100">
                             My Vehicles
                         </h3>
                         <button className="text-amber-600 font-bold text-sm hover:underline">
@@ -85,7 +85,7 @@ export default function BecomeAHostPage() {
                     <div className="relative group">
                         <div
                             onClick={() => router.push('/host/vehicles/1')}
-                            className="flex gap-4 p-3 bg-white border border-gray-100 rounded-2xl cursor-pointer hover:shadow-md transition"
+                            className="flex gap-4 p-3 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl cursor-pointer hover:shadow-md dark:hover:shadow-gray-900/50 transition"
                         >
                             <div className="relative h-20 w-32 flex-shrink-0 overflow-hidden rounded-xl">
                                 <Image
@@ -97,11 +97,11 @@ export default function BecomeAHostPage() {
                             </div>
 
                             <div className="flex-1 flex flex-col justify-center">
-                                <h4 className="font-bold text-gray-900">Toyota Corolla</h4>
-                                <p className="text-xs text-gray-400 mb-2">2010</p>
+                                <h4 className="font-bold text-gray-900 dark:text-gray-100">Toyota Corolla</h4>
+                                <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">2010</p>
 
                                 <div className="flex items-center gap-3">
-                                    <span className="px-2 py-0.5 bg-green-50 text-green-600 text-[10px] font-bold rounded-md">
+                                    <span className="px-2 py-0.5 bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold rounded-md">
                                         Available
                                     </span>
                                     <span className="text-sm font-bold text-amber-600">

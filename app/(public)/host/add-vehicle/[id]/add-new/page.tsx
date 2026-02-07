@@ -69,25 +69,25 @@ export default function AddNewPickupLocationPage() {
     return (
         <>
             <Navbar />
-            <div className="min-h-screen bg-gray-50">
+            <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
             {/* Header */}
-            <div className="bg-white border-b border-gray-100 px-4 py-4 flex items-center gap-3">
+            <div className="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800 px-4 py-4 flex items-center gap-3">
                 <button
                     onClick={() => router.back()}
-                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 rounded-full transition"
+                    className="w-10 h-10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition"
                 >
-                    <ChevronRight size={24} className="text-gray-900 rotate-180" />
+                    <ChevronRight size={24} className="text-gray-900 dark:text-gray-100 rotate-180" />
                 </button>
-                <h1 className="text-xl font-bold text-gray-900">Add Pickup Location</h1>
+                <h1 className="text-xl font-bold text-gray-900 dark:text-gray-100">Add Pickup Location</h1>
             </div>
 
             <div className="p-4">
-                <p className="text-sm text-gray-600 mb-6">Enter the details for this pickup location</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Enter the details for this pickup location</p>
 
                 <div className="space-y-4">
                     {/* Address Name */}
                     <div>
-                        <label className="block text-sm font-semibold text-gray-900 mb-2">
+                        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
                             Address Name <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -96,13 +96,13 @@ export default function AddNewPickupLocationPage() {
                             value={formData.addressName}
                             onChange={handleInputChange}
                             placeholder="e.g., Accra Mall, Tema Station"
-                            className="w-full px-4 py-3 bg-gray-100 border-0 rounded-2xl text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-amber-400 transition"
+                            className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border-0 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:ring-2 focus:ring-amber-400 transition"
                         />
                     </div>
 
                     {/* Address Line 2 */}
                     <div>
-                        <label className="block text-sm font-semibold text-gray-900 mb-2">
+                        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
                             Address Line 2
                         </label>
                         <input
@@ -111,7 +111,7 @@ export default function AddNewPickupLocationPage() {
                             value={formData.addressLine2}
                             onChange={handleInputChange}
                             placeholder="Additional details (optional)"
-                            className="w-full px-4 py-3 bg-gray-100 border-0 rounded-2xl text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-amber-400 transition"
+                            className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border-0 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:ring-2 focus:ring-amber-400 transition"
                         />
                     </div>
 
@@ -119,7 +119,7 @@ export default function AddNewPickupLocationPage() {
                     <div className="grid grid-cols-2 gap-3">
                         {/* City */}
                         <div>
-                            <label className="block text-sm font-semibold text-gray-900 mb-2">
+                            <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
                                 City <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -128,13 +128,13 @@ export default function AddNewPickupLocationPage() {
                                 value={formData.city}
                                 onChange={handleInputChange}
                                 placeholder="e.g., Accra"
-                                className="w-full px-4 py-3 bg-gray-100 border-0 rounded-2xl text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-amber-400 transition"
+                                className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border-0 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:ring-2 focus:ring-amber-400 transition"
                             />
                         </div>
 
                         {/* State/Region */}
                         <div>
-                            <label className="block text-sm font-semibold text-gray-900 mb-2">
+                            <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
                                 State/Region <span className="text-red-500">*</span>
                             </label>
                             <input
@@ -143,14 +143,14 @@ export default function AddNewPickupLocationPage() {
                                 value={formData.stateRegion}
                                 onChange={handleInputChange}
                                 placeholder="e.g., Greater Accra"
-                                className="w-full px-4 py-3 bg-gray-100 border-0 rounded-2xl text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-amber-400 transition"
+                                className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border-0 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:ring-2 focus:ring-amber-400 transition"
                             />
                         </div>
                     </div>
 
                     {/* Country */}
                     <div>
-                        <label className="block text-sm font-semibold text-gray-900 mb-2">
+                        <label className="block text-sm font-semibold text-gray-900 dark:text-gray-100 mb-2">
                             Country <span className="text-red-500">*</span>
                         </label>
                         <input
@@ -159,7 +159,7 @@ export default function AddNewPickupLocationPage() {
                             value={formData.country}
                             onChange={handleInputChange}
                             placeholder="Ghana"
-                            className="w-full px-4 py-3 bg-gray-100 border-0 rounded-2xl text-gray-900 placeholder-gray-400 outline-none focus:ring-2 focus:ring-amber-400 transition"
+                            className="w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border-0 rounded-2xl text-gray-900 dark:text-gray-100 placeholder-gray-400 dark:placeholder-gray-500 outline-none focus:ring-2 focus:ring-amber-400 transition"
                         />
                     </div>
 

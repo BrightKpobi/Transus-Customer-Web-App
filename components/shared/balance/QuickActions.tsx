@@ -6,7 +6,7 @@ import QuickActionItem from './QuickActionItem'
 export default function QuickActions() {
     return (
         <section className="space-y-4 lg:space-y-6">
-            <h2 className="text-lg font-bold uppercase tracking-tighter text-gray-900">
+            <h2 className="text-lg font-bold uppercase tracking-tighter text-gray-900 dark:text-gray-100">
                 Quick Actions
             </h2>
 

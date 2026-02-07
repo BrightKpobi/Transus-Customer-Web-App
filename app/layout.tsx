@@ -4,6 +4,7 @@ import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { FavoritesProvider } from "@/components/shared/car-carousel/FavoritesContext";
 import { ThemeProvider } from "@/components/theme-provider/ThemeProvider";
+import { AuthProvider } from "@/contexts/AuthContext";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -26,16 +27,17 @@ export default function RootLayout({
       <body className={`${outfit.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="light"
+          enableSystem={false}
           disableTransitionOnChange
         >
-          <FavoritesProvider>
-            {children}
-          </FavoritesProvider>
+          <AuthProvider>
+            <FavoritesProvider>
+              {children}
+            </FavoritesProvider>
+            <Toaster position="top-center" richColors closeButton expand={true} />
+          </AuthProvider>
         </ThemeProvider>
-
-        <Toaster position="top-center" />
       </body>
     </html>
   );

@@ -11,7 +11,7 @@ type Car = {
 export default function CarGrid({ cars }: { cars: Car[] }) {
     if (!cars.length) {
         return (
-            <p className="text-gray-500">
+            <p className="text-gray-500 dark:text-gray-400">
                 No cars available.
             </p>
         );

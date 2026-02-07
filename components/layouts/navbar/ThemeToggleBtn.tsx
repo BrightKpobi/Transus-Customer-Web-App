@@ -11,7 +11,7 @@ export function ModeToggle() {
 
     useEffect(() => setMounted(true), [])
 
-    if (!mounted) return <div className="h-24 w-full bg-gray-100 animate-pulse rounded-xl" />
+    if (!mounted) return <div className="h-24 w-full bg-gray-100 dark:bg-gray-800 animate-pulse rounded-xl" />
 
     const options = [
         { id: "light", icon: Sun, label: "Light" },
@@ -30,12 +30,12 @@ export function ModeToggle() {
                         key={option.id}
                         onClick={() => setTheme(option.id)}
                         className={`flex flex-col items-center justify-center gap-3 p-4 rounded-xl border-2 transition-all duration-200 ${isActive
-                                ? "border-black bg-white shadow-sm ring-1 ring-black"
-                                : "border-gray-100 bg-white hover:border-gray-300 text-gray-500"
+                                ? "border-black dark:border-white bg-white dark:bg-gray-800 shadow-sm ring-1 ring-black dark:ring-white"
+                                : "border-gray-100 dark:border-gray-700 bg-white dark:bg-gray-900 hover:border-gray-300 dark:hover:border-gray-500 text-gray-500"
                             }`}
                     >
-                        <Icon size={20} className={isActive ? "text-black" : "text-gray-400"} />
-                        <span className={`text-xs font-semibold ${isActive ? "text-black" : "text-gray-500"}`}>
+                        <Icon size={20} className={isActive ? "text-black dark:text-white" : "text-gray-400 dark:text-gray-500"} />
+                        <span className={`text-xs font-semibold ${isActive ? "text-black dark:text-white" : "text-gray-500 dark:text-gray-400"}`}>
                             {option.label}
                         </span>
                     </button>

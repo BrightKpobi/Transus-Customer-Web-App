@@ -71,7 +71,7 @@ export function FeaturesStep({ formData, updateFormData }: FeaturesStepProps) {
         <div className="space-y-8">
             {featureCategories.map((category) => (
                 <div key={category.title}>
-                    <h4 className="text-sm font-bold text-gray-900 mb-3">
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-gray-100 mb-3">
                         {category.title}
                     </h4>
                     <div className="flex flex-wrap gap-2">
@@ -86,7 +86,7 @@ export function FeaturesStep({ formData, updateFormData }: FeaturesStepProps) {
                                         px-4 py-2.5 rounded-full text-sm font-medium border transition
                                         ${isSelected
                                             ? 'bg-amber-400 border-amber-400 text-white'
-                                            : 'bg-white border-gray-200 text-gray-700 hover:border-amber-400'
+                                            : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-amber-400'
                                         }
                                     `}
                                 >

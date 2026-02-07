@@ -1,6 +1,7 @@
 export interface Car {
   price: string;
   id: string | number;
+  slug: string; // added slug property
   name: string;
   image: string;
   rating: number;
@@ -22,6 +23,7 @@ export interface Car {
 export const AllCars: Car[] = [
   {
     id: "car-1",
+    slug: "hyundai-palisade",
     name: "Hyundai Palisade",
     year: 2026,
     image:
@@ -40,6 +42,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-2",
+    slug: "mercedes-benz-e-class",
     name: "Mercedes-Benz E-Class",
     year: 2021,
     image:
@@ -58,6 +61,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-3",
+    slug: "mini-countryman",
     name: "MINI Countryman",
     year: 2025,
     rating: 5.0,
@@ -76,6 +80,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-4",
+    slug: "toyota-tundra",
     name: "Toyota Tundra",
     year: 2024,
     image: "/img/cars/2024-Toyota-Tundra.png",
@@ -93,6 +98,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-5",
+    slug: "mazda-cx-5",
     name: "Mazda CX 5",
     year: 2024,
     image: "/img/cars/2024-Mazda-CX-5.png",
@@ -110,6 +116,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-6",
+    slug: "toyota-camry-2013",
     image: "/img/cars/2013-Toyota-Camry.png",
     name: "Toyota Camry",
     year: 2013,
@@ -127,8 +134,9 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-7",
+    slug: "toyota-corolla-s-2015",
     image: "/img/cars/2015-Toyota-CorrolaS.png",
-    name: "Toyota Camry",
+    name: "Toyota Corolla S",
     year: 2015,
     rating: 5.0,
     trips: 5,
@@ -144,6 +152,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-8",
+    slug: "honda-civic-ex-2016",
     image: "/img/cars/2016-Honda-Civic-EX.png",
     name: "Honda Civic EX",
     year: 2016,
@@ -161,6 +170,7 @@ export const AllCars: Car[] = [
   },
   {
     id: "car-9",
+    slug: "kia-sorento-2016",
     image: "/img/cars/2016-Kia-Sorento.png",
     name: "Kia Sorento",
     year: 2016,

@@ -20,7 +20,7 @@ export default function Home() {
             View All Cars →
           </Link>
         </div>
-        <CarGrid data={AllCars} slug="all-cars" />
+        <CarGrid data={AllCars} />
       </div>
     </main>
   );

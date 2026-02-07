@@ -10,10 +10,9 @@ import { Car } from "@/data/CarsData";
 interface CarGridProps {
   title?: string;
   data: Car[];
-  slug: string;
 }
 
-export function CarGrid({ title, data, slug }: CarGridProps) {
+export function CarGrid({ title, data }: CarGridProps) {
   const { favorites, toggleFavorite } = useFavorites();
 
   return (
@@ -30,7 +29,7 @@ export function CarGrid({ title, data, slug }: CarGridProps) {
           return (
             <div key={car.id}>
               <Link
-                href={`/checkout/${car.id}`}
+                href={`/cars/${car.slug}`}
                 className="block space-y-3 group cursor-pointer">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-xl bg-gray-100">
                   <Image
@@ -57,6 +56,7 @@ export function CarGrid({ title, data, slug }: CarGridProps) {
                     />
                   </button>
                 </div>
+
                 <div className="space-y-1">
                   <h3 className="font-bold text-sm md:text-lg leading-tight truncate">
                     {car.name} {car.year}

@@ -1,4 +1,3 @@
-import { CarCarousel } from "@/components/shared/car-carousel/CarCarousel";
 import CarFilterBar from "@/components/shared/cars/CarFilter";
 import { AllCars } from "@/data/CarsData";
 import { CarGrid } from "@/components/shared/car-carousel/CarGrid";
@@ -11,7 +10,7 @@ export default function CarsPage() {
       <CarFilterBar />
 
       <div className="space-y-5">
-        <CarGrid data={AllCars} slug="all-cars" title="All Cars" />
+        <CarGrid data={AllCars} title="All Cars" />
       </div>
     </div>
   );

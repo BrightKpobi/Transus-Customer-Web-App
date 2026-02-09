@@ -1,4 +1,5 @@
 import { AllCars, Car } from "@/data/CarsData";
+import Link from "next/link";
 import Image from "next/image";
 import {
   Fuel,
@@ -112,10 +113,11 @@ export default async function CarSlugPage({ params }: CarSlugPageProps) {
                 </div>
               </div>
 
-              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-black py-4 rounded-xl transition-colors uppercase tracking-wide">
+              <Link
+                href={`/checkout/${car.id}`}
+                className="block w-full bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-black py-4 rounded-xl transition-colors uppercase tracking-wide text-center">
                 Book Now
-              </button>
-
+              </Link>
               <div className="pt-6 mt-4 border-t border-slate-100 text-center">
                 <p className="text-xs text-slate-400 font-bold uppercase tracking-tighter">
                   Owned by {car.host}
